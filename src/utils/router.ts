@@ -1,5 +1,5 @@
-import { cart } from 'pages/Cart';
-import { home } from 'pages/Home';
+import { cart } from 'pages/cart';
+import { home } from 'pages/home';
 import { RoutesData } from './types';
 
 const routes: Array<RoutesData> = [
@@ -16,7 +16,7 @@ const routes: Array<RoutesData> = [
 const root = document.getElementById('root');
 
 export function appendPage(): void {
-  let route: RoutesData | undefined = routes.find((road) => road.path == window.location.pathname);
+  const route: RoutesData | undefined = routes.find((road) => road.path == window.location.pathname);
   if (root === null) {
     throw new Error();
   }

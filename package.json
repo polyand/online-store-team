@@ -8,7 +8,9 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier": "npx prettier --check src/",
+    "prettier:fix": "npx prettier --write src/"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
