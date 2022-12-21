@@ -1,5 +1,5 @@
-import { cart } from 'pages/cart';
-import { home } from 'pages/home';
+import { cart } from '../pages/cart';
+import { home } from '../pages/home';
 import { RoutesData } from './types';
 
 const routes: Array<RoutesData> = [
