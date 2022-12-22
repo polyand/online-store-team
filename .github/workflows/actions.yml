@@ -1,17 +1,18 @@
 name: GitHub Actions
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
-  push: 
-    branches: 
+  push:
+    branches:
       - develop
-  pull_request: 
-    types: [opened, reopened, closed]
+  pull_request:
+    branches:
+      - develop
 jobs:
   checks:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [18.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
