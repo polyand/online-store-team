@@ -11,14 +11,14 @@
         font-style: normal;
         font-weight: 400;
         src: local(''), url('./assets/fonts/open-sans-v34-latin-regular.woff2') format('woff2'),
-          /* Chrome 26+, Opera 23+, Firefox 39+ */ url('./assets/fonts/open-sans-v34-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+          url('./assets/fonts/open-sans-v34-latin-regular.woff') format('woff');
       }
       @font-face {
         font-family: 'Open Sans';
         font-style: normal;
         font-weight: 700;
         src: local(''), url('./assets/fonts/open-sans-v34-latin-700.woff2') format('woff2'),
-          /* Chrome 26+, Opera 23+, Firefox 39+ */ url('./assets/fonts/open-sans-v34-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+          url('./assets/fonts/open-sans-v34-latin-700.woff') format('woff');
       }
       body {
         background-color: #c4c4c4;
@@ -37,10 +37,10 @@
         align-items: center;
         gap: 10%;
       }
-      .image-404{
+      .image-404 {
         width: 40%;
       }
-      .description-404{
+      .description-404 {
         min-width: 300px;
       }
       .description-404__error-number {
@@ -98,7 +98,7 @@
         height: 100%;
         line-height: 2.5rem;
         text-decoration: none;
-        color: #FDFBF8;
+        color: #fdfbf8;
         font-weight: 400;
         font-size: 1.2rem;
       }
@@ -107,7 +107,7 @@
           flex-direction: column;
           gap: 0;
         }
-        .image-404{
+        .image-404 {
           width: 100%;
         }
         .description-404__error-number {
@@ -115,14 +115,14 @@
         }
         .description-404__button {
           display: block;
-          margin: 0 auto ;
+          margin: 0 auto;
         }
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <img src="assets/img/error_404.svg" alt="Error 404 image" class="image-404">
+      <img src="assets/img/error_404.svg" alt="Error 404 image" class="image-404" />
       <div class="description-404">
         <div class="description-404__error-number">404</div>
         <div class="description-404__header">This is not the page you looking for...</div>
