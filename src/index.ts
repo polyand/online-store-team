@@ -4,7 +4,6 @@ import './index.scss';
 window.addEventListener('click', router);
 window.addEventListener('popstate', appendPage);
 document.addEventListener('DOMContentLoaded', appendPage);
-
 const headerElement = document.querySelector('.header');
 if (headerElement === null) {
   throw new Error();
