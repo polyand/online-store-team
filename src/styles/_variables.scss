@@ -1,2 +1,16 @@
-$primary-color: #E0EFF6;
-$dark-color: #07484A;
+$primary-color: #e0eff6;
+$dark-color: #07484a;
+
+@mixin go-adaptive320-1920($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: 1920) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (1920 - 320)));
+  }
+}
+@mixin go-adaptive320-640($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  @media (max-width: 640px) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (640 - 320)));
+  }
+}
