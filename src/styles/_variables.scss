@@ -1,2 +1,54 @@
-$primary-color: #e0eff6;
-$dark-color: #07484a;
+$sweet-color: #E0EFF6;
+$dark-color: #07484A;
+$semi-dark-color: #70908B;
+
+
+%Open-Sans-400 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+}
+
+%Open-Sans-700 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+}
+
+%Playfair-Display-400 {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+}
+
+%Playfair-Display-700 {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+}
+
+%Roboto-400 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+}
+
+%Roboto-700 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin go-adaptive320-1920($property, $startSize, $minSize) {
+    $addSize: $startSize - $minSize;
+    #{$property}: $startSize + px;
+    @media (max-width: 1920px) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (1920 - 320)));
+    }
+  }
+  @mixin go-adaptive320-640($property, $startSize, $minSize) {
+    $addSize: $startSize - $minSize;
+    @media (max-width: 640px) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (640 - 320)));
+    }
+  }
