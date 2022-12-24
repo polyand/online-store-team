@@ -1,105 +1,98 @@
 @import '../../styles/variables';
-// @import '../../styles/fonts';
-// @import './styles/normalize';
+@import '../../styles/normalize';
 
-.footer__wrapper {
-  width: 100%;
-  @include go-adaptive320-1920('height', 100, 60);
-  @include go-adaptive320-1920('padding-left', 50, 10);
-  @include go-adaptive320-1920('padding-right', 50, 10);
-  background-color: $primary-color;
-  display: grid;
-  grid-template-columns: 2fr 0.7fr 2fr;
-  grid-row-gap: 50px;
-  align-items: center;
-  @media (max-width: 500px) {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 1.2fr 1fr;
-    grid-row-gap: 0;
+.footer {
+  background-color: $sweet-color;
 
-  }
-
-  div {
-    @media (max-width: 500px) {
-      grid-area: 1 / 1 / 3 / 3;
-    }
-  }
-
-
-  .footer__logo-rss {
-    width: 96px;
-    height: 36px;
-    @include go-adaptive320-640('width', 96, 58);
-    @include go-adaptive320-640('height', 36, 22);
-    background-image: url('../../assets/img/logo_rss.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    justify-self: right;
-    cursor: pointer;
-    @media (max-width: 500px) {
-      grid-area: 1 / 2 / 2 / 3;
-      align-self: end;
-    }
-  }
-
-  .footer__logo-rss_hover {
-    background-image: url('../../assets/img/logo_rss_hover.svg');
-  }
-
-  .footer__year {
-    // @extend %Open-Sans-700;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    //  ==================================
-    color: $dark-color;
-    @media (max-width: 500px) {
-      grid-area: 2 / 2 / 3 / 3;
-    }
-  }
-
-  .footer__year {
-    font-size: 22px;
-    @include go-adaptive320-640('font-size', 22, 14);
-    justify-self: center;
-  }
-
-  .logo-github {
-    display: flex;
+  .footer__wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    @include go-adaptive320-1920('height', 100, 60);
+    @include go-adaptive320-1920('padding-left', 50, 10);
+    @include go-adaptive320-1920('padding-right', 50, 10);
+    display: grid;
+    grid-template-columns: 2fr 0.7fr 2fr;
+    grid-row-gap: 50px;
     align-items: center;
-
-    .logo-github__title {
-      // @extend %Open-Sans-700;
-      font-family: 'Open Sans';
-      font-style: normal;
-      font-weight: 700;
-      //  ==================================
-      color: $dark-color;
-      margin: 0;
-      font-size: 18px;
-      @include go-adaptive320-640('font-size', 18, 12);
-      cursor: pointer;
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 1.2fr 1fr;
+      grid-row-gap: 0;
     }
 
-    .logo-github__title_hover {
-      color: $semi-dark-color;
+    div {
+      @media (max-width: 500px) {
+        grid-area: 1 / 1 / 3 / 3;
+      }
     }
 
-    .logo-github__img {
-      width: 30px;
-      height: 30px;
-      @include go-adaptive320-640('width', 30, 20);
-      @include go-adaptive320-640('height', 30, 20);
-      background-image: url('../../assets/img/logo_github.svg');
+    .footer__logo-rss {
+      width: 96px;
+      height: 36px;
+      @include go-adaptive320-640('width', 96, 58);
+      @include go-adaptive320-640('height', 36, 22);
+      background-image: url('../../assets/img/logo_rss.svg');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: 100%;
+      justify-self: right;
       cursor: pointer;
+      @media (max-width: 500px) {
+        grid-area: 1 / 2 / 2 / 3;
+        align-self: end;
+      }
     }
 
-    .logo-github__img_hover {
-      background-image: url('../../assets/img/logo_github_hover.svg');
+    .footer__logo-rss_hover {
+      background-image: url('../../assets/img/logo_rss_hover.svg');
+    }
+
+    .footer__year {
+      color: $dark-color;
+      @extend %Open-Sans-700;
+      @media (max-width: 500px) {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+    }
+
+    .footer__year {
+      @include go-adaptive320-640('font-size', 22, 14);
+      font-size: 22px;
+      justify-self: center;
+    }
+
+    .logo-github {
+      display: flex;
+      align-items: center;
+
+      .logo-github__title {
+        @extend %Open-Sans-700;
+        @include go-adaptive320-640('font-size', 18, 12);
+        color: $dark-color;
+        margin: 0;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .logo-github__title_hover {
+        color: $semi-dark-color;
+      }
+
+      .logo-github__img {
+        width: 30px;
+        height: 30px;
+        @include go-adaptive320-640('width', 30, 20);
+        @include go-adaptive320-640('height', 30, 20);
+        background-image: url('../../assets/img/logo_github.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        cursor: pointer;
+      }
+
+      .logo-github__img_hover {
+        background-image: url('../../assets/img/logo_github_hover.svg');
+      }
     }
   }
 }

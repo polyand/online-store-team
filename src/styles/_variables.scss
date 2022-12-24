@@ -1,6 +1,43 @@
-$primary-color: #E0EFF6;
+$sweet-color: #E0EFF6;
 $dark-color: #07484A;
 $semi-dark-color: #70908B;
+
+
+%Open-Sans-400 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+}
+
+%Open-Sans-700 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+}
+
+%Playfair-Display-400 {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+}
+
+%Playfair-Display-700 {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+}
+
+%Roboto-400 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+}
+
+%Roboto-700 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+}
 
 @mixin go-adaptive320-1920($property, $startSize, $minSize) {
     $addSize: $startSize - $minSize;
