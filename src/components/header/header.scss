@@ -1,85 +1,80 @@
 @import 'styles/variables';
-// @import 'styles/fonts';
-// @import 'styles/normalize';
+@import 'styles/normalize';
 
-.header__wrapper {
-  width: 100%;
-  @include go-adaptive320-1920('height', 100, 60);
-  @include go-adaptive320-1920('padding-left', 50, 10);
-  @include go-adaptive320-1920('padding-right', 50, 10);
-  background-color: $primary-color;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header {
+  background-color: $sweet-color;
 
-  .header__logo {
-    width: 144px;
-    height: 36px;
-    @include go-adaptive320-640('width', 144, 86);
-    @include go-adaptive320-640('height', 36, 22);
-    background-image: url('../../assets/img/logo_main.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    cursor: pointer;
-  }
-
-  .header__total-cost {
-      // @extend %Playfair-Display-700;
-    font-family: 'Playfair Display';
-    font-style: normal;
-    font-weight: 700;
-    //  ==================================
-    font-size: 30px;
-    @include go-adaptive320-640('font-size', 30, 18);
-    color: $dark-color;
-  }
-
-  .cart {
-    width: 144px;
-    height: 36px;
-    @include go-adaptive320-640('width', 144, 86);
-    @include go-adaptive320-640('height', 36, 22);
+  .header__wrapper {
+    // width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    @include go-adaptive320-1920('height', 100, 60);
+    @include go-adaptive320-1920('padding-left', 50, 10);
+    @include go-adaptive320-1920('padding-right', 50, 10);
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
 
-    .cart__number {
-      // @extend %Open-Sans-700;
-      font-family: 'Open Sans';
-      font-style: normal;
-      font-weight: 700;
-      //  ==================================
-
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
-      font-size: 18px;
-      @include go-adaptive320-640('width', 25, 15);
-      @include go-adaptive320-640('height', 25, 15);
-      @include go-adaptive320-640('line-height', 25, 15);
-      @include go-adaptive320-640('font-size', 18, 13);
-      text-align: center;
-      border-radius: 50%;
-      background-color: $dark-color;
-      color: $primary-color;
-      cursor: pointer;
-    }
-
-    .cart__number_invisible {
-      display: none;
-    }
-
-    .cart__logo {
-      width: 36px;
+    .header__logo {
+      width: 144px;
       height: 36px;
-      @include go-adaptive320-640('width', 36, 22);
+      @include go-adaptive320-640('width', 144, 86);
       @include go-adaptive320-640('height', 36, 22);
-      background-image: url('../../assets/img/logo_cart.svg');
+      background-image: url('../../assets/img/logo_main.svg');
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: 75%;
+      background-size: 100%;
       cursor: pointer;
     }
+
+    .header__total-cost {
+      @extend %Playfair-Display-700;
+      @include go-adaptive320-640('font-size', 30, 18);
+      color: $dark-color;
+      font-size: 30px;
+    }
+
+    .cart {
+      width: 144px;
+      height: 36px;
+      @include go-adaptive320-640('width', 144, 86);
+      @include go-adaptive320-640('height', 36, 22);
+      display: flex;
+      justify-content: right;
+      align-items: center;
+
+      .cart__number {
+        @extend %Open-Sans-700;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 18px;
+        @include go-adaptive320-640('width', 25, 15);
+        @include go-adaptive320-640('height', 25, 15);
+        @include go-adaptive320-640('line-height', 25, 15);
+        @include go-adaptive320-640('font-size', 18, 13);
+        text-align: center;
+        border-radius: 50%;
+        background-color: $dark-color;
+        color: $sweet-color;
+        cursor: pointer;
+      }
+
+      .cart__logo {
+        width: 36px;
+        height: 36px;
+        @include go-adaptive320-640('width', 36, 22);
+        @include go-adaptive320-640('height', 36, 22);
+        background-image: url('../../assets/img/logo_cart.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 75%;
+        cursor: pointer;
+      }
+    }
   }
+}
+
+.invisible {
+  display: none;
 }
