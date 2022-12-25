@@ -1,4 +1,229 @@
-.cart__testpage {
-  font-size: 48px;
-  color: chartreuse;
+@import '../../styles/variables';
+
+.cart-wrapper {
+  width: 100%;
+  // =============================================
+  // background-color: $background-color;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // ==============================================
+  .cart-hide {
+    display: none;
+  }
+  &__empty {
+    @include go-adaptive320-1920('width', 580, 100);
+    margin: 0 auto;
+    @include go-adaptive320-1920('margin-top', 50, 100);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .empty__image {
+      @include go-adaptive320-1920('width', 500, 150);
+    }
+
+    .empty__desc {
+      @include go-adaptive320-1920('margin-top', 20, 30);
+      text-align: center;
+      color: $dark-color;
+      @extend %Open-Sans-400;
+      @include go-adaptive320-1920('font-size', 36, 15);
+    }
+  }
+
+  &__fill {
+    width: 90%;
+    max-width: 1728px;
+    margin: 2% auto;
+    display: flex;
+    align-items: start;
+    gap: 2%;
+  }
+
+  .products {
+    flex: 0 0 70%;
+    border: 2px solid $semi-dark-color;
+    border-radius: 5px;
+
+    &__header {
+      height: 5vh;
+      color: $sweet-color;
+      background-color: $semi-dark-color;
+      @extend %Playfair-Display-400;
+      @include go-adaptive320-1920('font-size', 22, 10);
+      display: flex;
+      gap: 1%;
+      justify-content: flex-end;
+      align-items: center;
+
+      &-title {
+        @extend %Playfair-Display-700;
+        @include go-adaptive320-1920('font-size', 25, 10);
+        color: $background-color;
+        flex-grow: 1;
+        padding: 0 10px;
+      }
+
+      &-input {
+        width: 30px;
+        text-align: center;
+        @extend %Open-Sans-400;
+        color: $dark-color;
+        margin-right: 15px;
+      }
+
+      &-current-page {
+        @extend %Open-Sans-400;
+        min-width: 20px;
+        text-align: center;
+      }
+
+      &-next {
+        margin-right: 10px;
+      }
+
+      &-next,
+      &-prev {
+        cursor: pointer;
+      }
+    }
+
+    &__list {
+      padding: 0;
+      margin: 0;
+    }
+    & .item {
+      height: 17vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2%;
+      padding: 0 2%;
+      border-top: 1px solid $semi-dark-color;
+
+      &__number {
+        @extend %Playfair-Display-400;
+        @include go-adaptive320-1920('font-size', 40, 12);
+      }
+
+      &__image {
+        width: 100%;
+        @include go-adaptive320-1920('max-width', 120, 30);
+        border: 1px solid $semi-dark-color;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        &-brand {
+          @extend %Open-Sans-700;
+          @include go-adaptive320-1920('font-size', 35, 12);
+          border-bottom: 1px solid $semi-dark-color;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        &-category {
+          padding-right: 10px;
+          @extend %Open-Sans-400;
+          @include go-adaptive320-1920('font-size', 25, 10);
+        }
+
+        &-desc {
+          @extend %Open-Sans-400;
+          @include go-adaptive320-1920('font-size', 26, 10);
+        }
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+        flex: 0 0 10%;
+        color: $dark-color;
+        @extend %Open-Sans-400;
+        @include go-adaptive320-1920('font-size', 20, 10);
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-del,
+        &-add {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .summary {
+    flex: 0 0 30%;
+    border: 2px solid $semi-dark-color;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+      height: 5vh;
+      line-height: 4vh;
+      text-align: center;
+      color: $background-color;
+      background-color: $semi-dark-color;
+      @extend %Playfair-Display-700;
+      @include go-adaptive320-1920('font-size', 25, 12);
+    }
+
+    &__products,
+    &__price {
+      margin: 4% 0;
+      text-align: center;
+      @extend %Open-Sans-700;
+      @include go-adaptive320-1920('font-size', 32, 12);
+      color: $semi-dark-color;
+
+      & span {
+        color: $dark-color;
+      }
+    }
+
+    &__promo {
+      margin: 5% 0 2% 0;
+      text-align: center;
+      @extend %Open-Sans-400;
+      @include go-adaptive320-1920('font-size', 25, 9);
+      color: $dark-color;
+
+      &-input {
+        margin: 2% 0;
+      }
+
+      &-test {
+        @include go-adaptive320-1920('font-size', 18, 6);
+      }
+    }
+
+    &__submit {
+      margin: 5% 0;
+      align-self: center;
+      @extend %button-regular;
+
+      & span {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
 }
