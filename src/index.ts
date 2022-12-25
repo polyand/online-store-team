@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', appendPage);
 
 const headerElement = document.querySelector('.header');
 const footerElement = document.querySelector('.footer');
-addElement( headerElement, header)
-addElement( footerElement, footer)
+addElement(headerElement, header);
+addElement(footerElement, footer);
