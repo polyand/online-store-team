@@ -1,7 +1,8 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { CartProducts, ProductProperties } from 'utils/types';
 import productsData from '../../../data/data.json';
-import { changeProductAmount } from './change-amount';
+import { changeProductAmount } from './change-product-amount';
+import { triggerEmptyCart } from './trigger-empty-cart';
 
 function getProductData(productId: number) {
   const items = productsData.products;
@@ -18,6 +19,9 @@ function getProductData(productId: number) {
 }
 
 export function createProductItem(productsInCart: CartProducts) {
+  if (productsInCart.id.length === 0) {
+    triggerEmptyCart();
+  }
   const productsList = getHtmlElement(document, '.products__list');
   productsList.innerHTML = '';
   for (let i = 0; i < productsInCart.id.length; i++) {
