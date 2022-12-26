@@ -10,34 +10,11 @@
         <label for="paginate" class="products__header-label">products per page </label>
         <input id="paginate" type="text" class="products__header-input" value="3" />
         <span class="products__header-text">page: </span>
-        <button class="products__header-prev"><</button>
+        <button class="products__header-prev">-</button>
         <span class="products__header-current-page">1</span>
-        <button class="products__header-next">></button>
+        <button class="products__header-next">+</button>
       </div>
-      <ul class="products__list">
-        <li class="products__list-item item">
-          <span class="item__number">1</span>
-          <img src="../../data/assets/bedroom/beds/abildro/thumbnail.jpg" alt="product image" class="item__image" />
-          <div class="item__text">
-            <div class="item__text-brand">
-              <span class="item__text-name">Name</span>
-              <span class="item__text-category">Category</span>
-            </div>
-            <div class="item__text-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, et tenetur non asperiores dicta veniam?
-            </div>
-          </div>
-          <div class="item__info">
-            <div class="item__info-stock">Stock: <span class="stock-amount">99</span></div>
-            <div class="item__info-controls controls">
-              <button class="controls-del">-</button>
-              <span class="controls-amount">1</span>
-              <button class="controls-add">+</button>
-            </div>
-            <div class="item__info-price">$<span class="price-amount">99.99</span></div>
-          </div>
-        </li>
-      </ul>
+      <ul class="products__list"></ul>
     </div>
     <div class="cart-wrapper__summary summary">
       <div class="summary__header">Summary</div>

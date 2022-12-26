@@ -89,3 +89,18 @@ $background-color: #fff7ee;
     transition: 0.2s ease;
   }
 }
+
+@mixin text-elipsis($rows) {
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -ms-line-clamp: $rows;
+  -webkit-line-clamp: $rows;
+  line-clamp: $rows;
+  display: -webkit-box;
+  display: box;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+}
