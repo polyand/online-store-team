@@ -1,22 +1,8 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
-import { CartProducts, ProductProperties } from 'utils/types';
-import productsData from '../../../data/data.json';
+import { getProductData } from 'utils/getProductById';
+import { CartProducts } from 'utils/types';
 import { changeProductAmount } from './change-product-amount';
 import { triggerEmptyCart } from './trigger-empty-cart';
-
-function getProductData(productId: number) {
-  const items = productsData.products;
-  let product: ProductProperties | undefined;
-  items.forEach((item) => {
-    if (item.id === productId) {
-      product = item;
-    }
-  });
-  if (!product) {
-    throw new Error('Can not find product by ID!');
-  }
-  return product;
-}
 
 export function createProductItem(productsInCart: CartProducts) {
   if (productsInCart.id.length === 0) {
