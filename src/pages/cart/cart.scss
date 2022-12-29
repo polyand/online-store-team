@@ -68,6 +68,55 @@
         padding: 0 10px;
       }
 
+      &-label {
+        position: relative;
+        &::after {
+          content: attr(data-title);
+          position: absolute;
+          top: 50px;
+          left: 40px;
+          z-index: 5;
+          @include go-adaptive320-1920('font-size', 17, 10);
+          @include go-adaptive320-1920('width', 360, 150);
+          text-align: center;
+          background: $dark-color;
+          border-radius: 5px;
+          padding: 14px 20px;
+          opacity: 0;
+          transform: translateY(-20px);
+          transition: 0.34s linear;
+          color: #fff;
+          box-shadow: 0 5px 12px #ccc;
+        }
+      }
+
+      &-label.wrong {
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &-label.wrong.focus {
+        &::after {
+          animation: 1s ease-in-out 0s trambling-animation;
+        }
+      }
+      @keyframes trambling-animation {
+        0%,
+        50%,
+        100% {
+          background-color: $dark-color;
+        }
+        10%,
+        30% {
+          background-color: $semi-dark-color;
+        }
+        20%,
+        40% {
+          background-color: $sweet-color;
+        }
+      }
+
       &-input {
         width: 30px;
         text-align: center;
@@ -89,6 +138,10 @@
       &-next,
       &-prev {
         cursor: pointer;
+
+        &:disabled {
+          cursor: default;
+        }
       }
     }
 

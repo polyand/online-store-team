@@ -13,7 +13,12 @@ function calculateProductsPrice(productAmount: number, productPrice: number, i: 
   productTotalPrice[i].textContent = `${price}`;
 }
 
-export function changeProductAmount(liElement: HTMLLIElement, productData: ProductProperties, index: number) {
+export function changeProductAmount(
+  liElement: HTMLLIElement,
+  productData: ProductProperties,
+  index: number,
+  inCartIndex: number
+) {
   const buttonDel = getHtmlElement(liElement, '.controls-del');
   const buttonAdd = getHtmlElement(liElement, '.controls-add');
   const productAmount = getHtmlElement(liElement, '.controls-amount');
@@ -21,9 +26,9 @@ export function changeProductAmount(liElement: HTMLLIElement, productData: Produ
     let amount = productAmount.textContent;
     if (amount) {
       amount = `${Number(amount) + 1}`;
-      inCart.amount[index]++;
+      inCart.amount[inCartIndex]++;
       saveProductsInCart();
-      calculateProductsPrice(inCart.amount[index], productData.price, index);
+      calculateProductsPrice(inCart.amount[inCartIndex], productData.price, index);
       changeSummaryCost(inCart, promoCodes);
       changeSummaryAmount(inCart);
       if (productData.stock === Number(amount) && buttonAdd instanceof HTMLButtonElement) {
@@ -36,14 +41,14 @@ export function changeProductAmount(liElement: HTMLLIElement, productData: Produ
     let amount = productAmount.textContent;
     if (amount) {
       amount = `${Number(amount) - 1}`;
-      inCart.amount[index]--;
+      inCart.amount[inCartIndex]--;
       saveProductsInCart();
-      calculateProductsPrice(inCart.amount[index], productData.price, index);
+      calculateProductsPrice(inCart.amount[inCartIndex], productData.price, index);
       changeSummaryCost(inCart, promoCodes);
       changeSummaryAmount(inCart);
-      if (inCart.amount[index] === 0) {
-        inCart.amount.splice(index, 1);
-        inCart.id.splice(index, 1);
+      if (inCart.amount[inCartIndex] === 0) {
+        inCart.amount.splice(inCartIndex, 1);
+        inCart.id.splice(inCartIndex, 1);
         liElement.outerHTML = '';
         if (inCart.id.length === 0) {
           triggerEmptyCart();

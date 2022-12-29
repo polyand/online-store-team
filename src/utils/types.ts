@@ -28,3 +28,8 @@ export type Promocodes = {
 };
 
 export type DiscountProperties = Array<[string, number]>;
+
+export type PaginationData = {
+  currentPage: number;
+  productsPerPage: number;
+};
