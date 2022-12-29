@@ -21,3 +21,15 @@ export type ProductProperties = {
   thumbnail: string;
   images: string[];
 };
+
+export type Promocodes = {
+  name: string[];
+  percentDicsount: number[];
+};
+
+export type DiscountProperties = Array<[string, number]>;
+
+export type PaginationData = {
+  currentPage: number;
+  productsPerPage: number;
+};

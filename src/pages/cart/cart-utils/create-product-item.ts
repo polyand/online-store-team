@@ -1,22 +1,10 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
-import { CartProducts, ProductProperties } from 'utils/types';
-import productsData from '../../../data/data.json';
+import { getProductData } from 'utils/getProductById';
+import { inCart } from 'utils/saveCart';
+import { CartProducts } from 'utils/types';
 import { changeProductAmount } from './change-product-amount';
+import { getPaginatedProductId, pagination, paginationData } from './pagination';
 import { triggerEmptyCart } from './trigger-empty-cart';
-
-function getProductData(productId: number) {
-  const items = productsData.products;
-  let product: ProductProperties | undefined;
-  items.forEach((item) => {
-    if (item.id === productId) {
-      product = item;
-    }
-  });
-  if (!product) {
-    throw new Error('Can not find product by ID!');
-  }
-  return product;
-}
 
 export function createProductItem(productsInCart: CartProducts) {
   if (productsInCart.id.length === 0) {
@@ -24,6 +12,7 @@ export function createProductItem(productsInCart: CartProducts) {
   }
   const productsList = getHtmlElement(document, '.products__list');
   productsList.innerHTML = '';
+  const elemLiArray: Array<HTMLLIElement> = [];
   for (let i = 0; i < productsInCart.id.length; i++) {
     const productData = getProductData(productsInCart.id[i]);
     // Create productItem
@@ -108,8 +97,19 @@ export function createProductItem(productsInCart: CartProducts) {
     productItem.append(itemText);
     productItem.append(itemInfo);
     // Append productItem to ul element
-    changeProductAmount(productItem, productData, i);
-    productsList.append(productItem);
+    elemLiArray.push(productItem);
   }
+  const paginatedElements = pagination(elemLiArray, paginationData);
+  paginatedElements.forEach((li, index) => {
+    const paginatedIndex = index + getPaginatedProductId(elemLiArray, paginationData);
+    const productId = inCart.id[paginatedIndex];
+    const productData = getProductData(productId);
+    changeProductAmount(li, productData, index, paginatedIndex);
+    productsList.append(li);
+  });
+  pagination(elemLiArray, paginationData);
+  const currentPage = getHtmlElement(document, '.products__header-current-page');
+  currentPage.textContent = `${paginationData.currentPage}`;
+  console.log(paginationData);
   return productsList;
 }

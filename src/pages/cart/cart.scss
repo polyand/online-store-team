@@ -68,6 +68,55 @@
         padding: 0 10px;
       }
 
+      &-label {
+        position: relative;
+        &::after {
+          content: attr(data-title);
+          position: absolute;
+          top: 50px;
+          left: 40px;
+          z-index: 5;
+          @include go-adaptive320-1920('font-size', 17, 10);
+          @include go-adaptive320-1920('width', 360, 150);
+          text-align: center;
+          background: $dark-color;
+          border-radius: 5px;
+          padding: 14px 20px;
+          opacity: 0;
+          transform: translateY(-20px);
+          transition: 0.34s linear;
+          color: #fff;
+          box-shadow: 0 5px 12px #ccc;
+        }
+      }
+
+      &-label.wrong {
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &-label.wrong.focus {
+        &::after {
+          animation: 1s ease-in-out 0s trambling-animation;
+        }
+      }
+      @keyframes trambling-animation {
+        0%,
+        50%,
+        100% {
+          background-color: $dark-color;
+        }
+        10%,
+        30% {
+          background-color: $semi-dark-color;
+        }
+        20%,
+        40% {
+          background-color: $sweet-color;
+        }
+      }
+
       &-input {
         width: 30px;
         text-align: center;
@@ -89,6 +138,10 @@
       &-next,
       &-prev {
         cursor: pointer;
+
+        &:disabled {
+          cursor: default;
+        }
       }
     }
 
@@ -197,7 +250,9 @@
     }
 
     &__products,
-    &__price {
+    &__price,
+    &__products-promo,
+    &__price-promo {
       margin: 4% 0;
       text-align: center;
       @extend %Open-Sans-700;
@@ -209,6 +264,10 @@
       }
     }
 
+    .cross-out {
+      text-decoration: line-through;
+    }
+
     &__promo {
       margin: 5% 0 2% 0;
       text-align: center;
@@ -218,10 +277,52 @@
 
       &-input {
         margin: 2% 0;
+
+        &:focus.valid {
+          outline: none;
+          border: 2px solid green;
+          box-shadow: 0px 0px 2px green;
+        }
+      }
+
+      .valid {
+        border: 2px solid green;
+      }
+
+      &-apply {
+        @include go-adaptive320-1920('font-size', 23, 7);
+        cursor: pointer;
+
+        &:disabled {
+          cursor: default;
+        }
       }
 
       &-test {
         @include go-adaptive320-1920('font-size', 18, 6);
+      }
+
+      .applied {
+        width: 80%;
+        margin: 10px auto 0;
+        @include go-adaptive320-1920('font-size', 20, 8);
+        border: 1px solid $semi-dark-color;
+
+        &-header {
+          padding: 2px 0;
+          color: $sweet-color;
+          background-color: $semi-dark-color;
+        }
+
+        &-code {
+          padding: 2px 0;
+          border-top: 1px solid $semi-dark-color;
+        }
+
+        &-drop {
+          @include go-adaptive320-1920('font-size', 18, 6);
+          cursor: pointer;
+        }
       }
     }
 
