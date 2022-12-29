@@ -2,11 +2,15 @@ import { appendPage } from 'utils/router';
 import { addElement } from 'utils/addElement';
 import { header } from 'components/header';
 import { footer } from 'components/footer';
-import './index.scss';
 import { homeActions } from 'pages/home/home';
+import { cartActions } from 'pages/cart/cart';
+import { headerActions } from 'components/header/header';
+import './index.scss';
 
 function onLoadFunctions() {
   appendPage();
+  cartActions();
+  headerActions();
   homeActions();
 }
 
