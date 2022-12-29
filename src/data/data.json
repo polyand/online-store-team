@@ -8,14 +8,14 @@
       "discountPercentage": 15,
       "rating": 4.5,
       "stock": 94,
-      "type": "Beds",
+      "type": "Bed",
       "category": "Bedroom",
       "thumbnail": "data/assets/bedroom/beds/kongsberg/thumbnail.jpg",
       "images": [
-        "./assets/bedroom/beds/kongsberg/1.jpg",
-        "./assets/bedroom/beds/kongsberg/2.jpg",
-        "./assets/bedroom/beds/kongsberg/3.jpg",
-        "./assets/bedroom/beds/kongsberg/thumbnail.jpg"
+        "data/assets/bedroom/beds/kongsberg/1.jpg",
+        "data/assets/bedroom/beds/kongsberg/2.jpg",
+        "data/assets/bedroom/beds/kongsberg/3.jpg",
+        "data/assets/bedroom/beds/kongsberg/thumbnail.jpg"
       ]
     },
     {
@@ -26,14 +26,14 @@
       "discountPercentage": 10,
       "rating": 3.9,
       "stock": 34,
-      "type": "Beds",
+      "type": "Bed",
       "category": "Bedroom",
       "thumbnail": "data/assets/bedroom/beds/abildro/thumbnail.jpg",
       "images": [
-        "./assets/bedroom/beds/abildro/1.jpg",
-        "./assets/bedroom/beds/abildro/2.jpg",
-        "./assets/bedroom/beds/abildro/3.jpg",
-        "./assets/bedroom/beds/abildro/thumbnail.jpg"
+        "data/assets/bedroom/beds/abildro/1.jpg",
+        "data/assets/bedroom/beds/abildro/2.jpg",
+        "data/assets/bedroom/beds/abildro/3.jpg",
+        "data/assets/bedroom/beds/abildro/thumbnail.jpg"
       ]
     },
     {
@@ -44,38 +44,38 @@
       "discountPercentage": 20,
       "rating": 4.1,
       "stock": 56,
-      "type": "Beds",
+      "type": "Bed",
       "category": "Bedroom",
       "thumbnail": "data/assets/bedroom/beds/sallinge/thumbnail.jpg",
       "images": [
-        "./assets/bedroom/beds/sallinge/1.jpg",
-        "./assets/bedroom/beds/sallinge/2.jpg",
-        "./assets/bedroom/beds/sallinge/3.jpg",
-        "./assets/bedroom/beds/sallinge/thumbnail.jpg"
+        "data/assets/bedroom/beds/sallinge/1.jpg",
+        "data/assets/bedroom/beds/sallinge/2.jpg",
+        "data/assets/bedroom/beds/sallinge/3.jpg",
+        "data/assets/bedroom/beds/sallinge/thumbnail.jpg"
       ]
     },
     {
       "id": 4,
-      "title": "3 drawer chest TAPDRUP oak",
-      "description": "Deco veneer. 3 drawers. W71 x H69 x D35 cm",
+      "title": "TAPDRUP",
+      "description": "Deco veneer. 3 drawer chest oak. W71 x H69 x D35 cm",
       "price": 50,
       "discountPercentage": 7,
       "rating": 4.2,
       "stock": 123,
-      "type": "Chest of Drawers",
+      "type": "Chest of Drawer",
       "category": "Bedroom",
       "thumbnail": "data/assets/bedroom/chest of drawers/tapdrup/thumbnail.jpg",
       "images": [
-        "./assets/bedroom/chest of drawers/tapdrup/1.jpg",
-        "./assets/bedroom/chest of drawers/tapdrup/2.jpg",
-        "./assets/bedroom/chest of drawers/tapdrup/3.jpg",
-        "./assets/bedroom/chest of drawers/tapdrup/thumbnail.jpg"
+        "data/assets/bedroom/chest of drawers/tapdrup/1.jpg",
+        "data/assets/bedroom/chest of drawers/tapdrup/2.jpg",
+        "data/assets/bedroom/chest of drawers/tapdrup/3.jpg",
+        "data/assets/bedroom/chest of drawers/tapdrup/thumbnail.jpg"
       ]
     },
     {
       "id": 5,
-      "title": "6 drawer chest BJERRINGBRO natural/white",
-      "description": "Solid wood and MDF. W83 x H80 x D38 cm",
+      "title": "BJERRINGBRO",
+      "description": "6 drawer chest. Natural/white. Solid wood and MDF. W83 x H80 x D38 cm",
       "price": 99,
       "discountPercentage": 12,
       "rating": 3.1,
@@ -84,213 +84,213 @@
       "category": "Bedroom",
       "thumbnail": "data/assets/bedroom/chest of drawers/bjerringbro/thumbnail.jpg",
       "images": [
-        "./assets/bedroom/chest of drawers/bjerringbro/1.jpg",
-        "./assets/bedroom/chest of drawers/bjerringbro/2.jpg",
-        "./assets/bedroom/chest of drawers/bjerringbro/thumbnail.jpg"
+        "data/assets/bedroom/chest of drawers/bjerringbro/1.jpg",
+        "data/assets/bedroom/chest of drawers/bjerringbro/2.jpg",
+        "data/assets/bedroom/chest of drawers/bjerringbro/thumbnail.jpg"
       ]
     },
     {
       "id": 6,
-      "title": "Sofa GEDVED grey",
-      "description": "3-seater sofa in fabric. Seat cushion with pocket springs and foam padding. Back cushion in foam. Legs in solid wood. W210 x H85 x D84 cm",
+      "title": "GEDVED",
+      "description": "3-seater sofa in fabric, grey. Seat cushion with pocket springs and foam padding. Back cushion in foam. Legs in solid wood. W210 x H85 x D84 cm",
       "price": 490,
       "discountPercentage": 20,
       "rating": 4.7,
       "stock": 83,
-      "type": "Sofas",
+      "type": "Sofa",
       "category": "Living Room",
       "thumbnail": "data/assets/living room/sofas/gedved/thumbnail.jpg",
       "images": [
-        "./assets/living room/sofas/gedved/1.jpg",
-        "./assets/living room/sofas/gedved/2.jpg",
-        "./assets/living room/sofas/gedved/3.jpg",
-        "./assets/living room/sofas/gedved/thumbnail.jpg"
+        "data/assets/living room/sofas/gedved/1.jpg",
+        "data/assets/living room/sofas/gedved/2.jpg",
+        "data/assets/living room/sofas/gedved/3.jpg",
+        "data/assets/living room/sofas/gedved/thumbnail.jpg"
       ]
     },
     {
       "id": 7,
-      "title": "Sofa EGEDAL light grey",
-      "description": "2.5-seater sofa in fabric. Seat and back cushions in foam. Legs in solid wood. W170 x H82 x D81 cm",
+      "title": "EGEDAL",
+      "description": "2.5-seater sofa in fabric, grey. Seat and back cushions in foam. Legs in solid wood. W170 x H82 x D81 cm",
       "price": 249,
       "discountPercentage": 21,
-      "rating": 4.15,
+      "rating": 4.1,
       "stock": 50,
-      "type": "Sofas",
+      "type": "Sofa",
       "category": "Living Room",
       "thumbnail": "data/assets/living room/sofas/egedal/thumbnail.jpg",
       "images": [
-        "./assets/living room/sofas/egedal/1.jpg",
-        "./assets/living room/sofas/egedal/2.jpg",
-        "./assets/living room/sofas/egedal/3.jpg",
-        "./assets/living room/sofas/egedal/thumbnail.jpg"
+        "data/assets/living room/sofas/egedal/1.jpg",
+        "data/assets/living room/sofas/egedal/2.jpg",
+        "data/assets/living room/sofas/egedal/3.jpg",
+        "data/assets/living room/sofas/egedal/thumbnail.jpg"
       ]
     },
     {
       "id": 8,
-      "title": "Sofa KONGSMARK dark grey",
-      "description": "2.5-seater sofa in fabric. Seat and back cushions in foam. Legs in solid wood. W209 x H80 x D91 cm",
+      "title": "KONGSMARK",
+      "description": "2.5-seater sofa in fabric, dark grey. Seat and back cushions in foam. Legs in solid wood. W209 x H80 x D91 cm",
       "price": 525,
       "discountPercentage": 22,
       "rating": 4.3,
       "stock": 68,
-      "type": "Sofas",
+      "type": "Sofa",
       "category": "Living Room",
       "thumbnail": "data/assets/living room/sofas/kongsmark/thumbnail.jpg",
       "images": [
-        "./assets/living room/sofas/kongsmark/1.jpg",
-        "./assets/living room/sofas/kongsmark/2.jpg",
-        "./assets/living room/sofas/kongsmark/3.jpg",
-        "./assets/living room/sofas/kongsmark/thumbnail.jpg"
+        "data/assets/living room/sofas/kongsmark/1.jpg",
+        "data/assets/living room/sofas/kongsmark/2.jpg",
+        "data/assets/living room/sofas/kongsmark/3.jpg",
+        "data/assets/living room/sofas/kongsmark/thumbnail.jpg"
       ]
     },
     {
       "id": 9,
-      "title": "Infinix INBOOK",
+      "title": "INBOOK",
       "description": "Bamboo. D60 x H45 cm.",
       "price": 55,
       "discountPercentage": 10,
       "rating": 4.7,
       "stock": 96,
-      "type": "Tables",
+      "type": "Table",
       "category": "Living Room",
       "thumbnail": "data/assets/living room/tables/vandsted/thumbnail.jpg",
       "images": [
-        "./assets/living room/tables/vandsted/1.jpg",
-        "./assets/living room/tables/vandsted/2.jpg",
-        "./assets/living room/tables/vandsted/3.jpg",
-        "./assets/living room/tables/vandsted/thumbnail.jpg"
+        "data/assets/living room/tables/vandsted/1.jpg",
+        "data/assets/living room/tables/vandsted/2.jpg",
+        "data/assets/living room/tables/vandsted/3.jpg",
+        "data/assets/living room/tables/vandsted/thumbnail.jpg"
       ]
     },
     {
       "id": 10,
-      "title": "Nest of tables FALSLED D50/40 glass",
-      "description": "Oak veneer and tempered glass. D50/40 x H45/40 cm",
+      "title": "FALSLED",
+      "description": "Nest of tables. Oak veneer and tempered glass. D50/40 x H45/40 cm",
       "price": 79,
       "discountPercentage": 6,
       "rating": 5,
       "stock": 89,
-      "type": "Tables",
+      "type": "Table",
       "category": "Living Room",
       "thumbnail": "data/assets/living room/tables/falsed/thumbnail.jpg",
       "images": [
-        "./assets/living room/tables/falsed/1.jpg",
-        "./assets/living room/tables/falsed/2.jpg",
-        "./assets/living room/tables/falsed/3.jpg",
-        "./assets/living room/tables/falsed/thumbnail.jpg"
+        "data/assets/living room/tables/falsed/1.jpg",
+        "data/assets/living room/tables/falsed/2.jpg",
+        "data/assets/living room/tables/falsed/3.jpg",
+        "data/assets/living room/tables/falsed/thumbnail.jpg"
       ]
     },
     {
       "id": 11,
-      "title": "Dining table SKIBET D120 light oak",
-      "description": "Solid oak and oak veneer. D120 x H75 cm.",
+      "title": "SKIBET",
+      "description": "Dining table. Solid oak and light oak veneer. D120 x H75 cm.",
       "price": 350,
       "discountPercentage": 11,
       "rating": 4.2,
       "stock": 65,
-      "type": "Tables",
+      "type": "Table",
       "category": "Dining Room",
       "thumbnail": "data/assets/dining room/tables/skibet/thumbnail.jpg",
       "images": [
-        "./assets/dining room/tables/skibet/1.jpg",
-        "./assets/dining room/tables/skibet/2.jpg",
-        "./assets/dining room/tables/skibet/3.jpg",
-        "./assets/dining room/tables/skibet/thumbnail.jpg"
+        "data/assets/dining room/tables/skibet/1.jpg",
+        "data/assets/dining room/tables/skibet/2.jpg",
+        "data/assets/dining room/tables/skibet/3.jpg",
+        "data/assets/dining room/tables/skibet/thumbnail.jpg"
       ]
     },
     {
       "id": 12,
-      "title": "Dining table EGENS 90x190/270 black",
-      "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
+      "title": "EGENS",
+      "description": "Dining table. Solid oak and black oak veneer 90x190/270",
       "price": 325,
       "discountPercentage": 26,
       "rating": 4.6,
       "stock": 52,
-      "type": "Tables",
+      "type": "Table",
       "category": "Dining Room",
       "thumbnail": "data/assets/dining room/tables/egens/thumbnail.jpg",
       "images": [
-        "./assets/dining room/tables/egens/1.jpg",
-        "./assets/dining room/tables/egens/2.jpg",
-        "./assets/dining room/tables/egens/3.jpg",
-        "./assets/dining room/tables/egens/thumbnail.jpg"
+        "data/assets/dining room/tables/egens/1.jpg",
+        "data/assets/dining room/tables/egens/2.jpg",
+        "data/assets/dining room/tables/egens/3.jpg",
+        "data/assets/dining room/tables/egens/thumbnail.jpg"
       ]
     },
     {
       "id": 13,
-      "title": "Dining chair HVIDOVRE oak/black",
-      "description": "Fabric, oak veneer and steel.",
+      "title": "HVIDOVRE",
+      "description": "Dining chair. Fabric, oak veneer and steel.",
       "price": 85,
       "discountPercentage": 5,
-      "rating": 5,
+      "rating": 5.0,
       "stock": 68,
-      "type": "Chairs",
+      "type": "Chair",
       "category": "Dining Room",
       "thumbnail": "data/assets/dining room/chairs/hvidove/thumbnail.jpg",
       "images": [
-        "./assets/dining room/chairs/hvidove/1.jpg",
-        "./assets/dining room/chairs/hvidove/2.jpg",
-        "./assets/dining room/chairs/hvidove/3.jpg",
-        "./assets/dining room/chairs/hvidove/thumbnail.jpg"
+        "data/assets/dining room/chairs/hvidove/1.jpg",
+        "data/assets/dining room/chairs/hvidove/2.jpg",
+        "data/assets/dining room/chairs/hvidove/3.jpg",
+        "data/assets/dining room/chairs/hvidove/thumbnail.jpg"
       ]
     },
     {
       "id": 14,
-      "title": "Dining chair JELS oak",
-      "description": "Pine massif. 42x50 cm, height 86 cm",
+      "title": "JELS",
+      "description": "Dining chair. Pine massif, oak. 42x50 cm, height 86 cm",
       "price": 80,
       "discountPercentage": 20,
       "rating": 4.3,
       "stock": 114,
-      "type": "Chairs",
+      "type": "Chair",
       "category": "Dining Room",
       "thumbnail": "data/assets/dining room/chairs/jels/thumbnail.jpg",
       "images": [
-        "./assets/dining room/chairs/jels/1.jpg",
-        "./assets/dining room/chairs/jels/2.jpg",
-        "./assets/dining room/chairs/jels/3.jpg",
-        "./assets/dining room/chairs/jels/thumbnail.jpg"
+        "data/assets/dining room/chairs/jels/1.jpg",
+        "data/assets/dining room/chairs/jels/2.jpg",
+        "data/assets/dining room/chairs/jels/3.jpg",
+        "data/assets/dining room/chairs/jels/thumbnail.jpg"
       ]
     },
     {
       "id": 15,
-      "title": "Office chair TJELE black",
-      "description": "Faux leather. With adjustable height and stepless tilt mechanism. W68 x H115-125 x D77 cm.",
+      "title": "TJELE",
+      "description": "Office chair. Faux leather. With adjustable height and stepless tilt mechanism. W68 x H115-125 x D77 cm.",
       "price": 115,
       "discountPercentage": 13,
-      "rating": 4,
+      "rating": 4.0,
       "stock": 105,
-      "type": "Chairs",
+      "type": "Chair",
       "category": "Office",
       "thumbnail": "data/assets/office/chairs/tjele/thumbnail.jpg",
       "images": [
-        "./assets/office/chairs/tjele/1.jpg",
-        "./assets/office/chairs/tjele/2.jpg",
-        "./assets/office/chairs/tjele/3.jpg",
-        "./assets/office/chairs/tjele/thumbnail.jpg"
+        "data/assets/office/chairs/tjele/1.jpg",
+        "data/assets/office/chairs/tjele/2.jpg",
+        "data/assets/office/chairs/tjele/3.jpg",
+        "data/assets/office/chairs/tjele/thumbnail.jpg"
       ]
     },
     {
       "id": 16,
-      "title": "Office chair ASPERUP black",
-      "description": "Fabric and mesh. Base in steel. With lumbar support, flip-up armrests, adjustable height and stepless tilt mechanism. W59 x H95-106 x D61 cm.",
+      "title": "ASPERUP",
+      "description": "Office chair. Fabric and mesh. Base in steel. With lumbar support, flip-up armrests, adjustable height and stepless tilt mechanism. W59 x H95-106 x D61 cm.",
       "price": 85,
       "discountPercentage": 23,
-      "rating": 3,
+      "rating": 3.0,
       "stock": 85,
-      "type": "Chairs",
+      "type": "Chair",
       "category": "Office",
       "thumbnail": "data/assets/office/chairs/asperup/thumbnail.jpg",
       "images": [
-        "./assets/office/chairs/asperup/1.jpg",
-        "./assets/office/chairs/asperup/2.jpg",
-        "./assets/office/chairs/asperup/3.jpg",
-        "./assets/office/chairs/asperup/thumbnail.jpg"
+        "data/assets/office/chairs/asperup/1.jpg",
+        "data/assets/office/chairs/asperup/2.jpg",
+        "data/assets/office/chairs/asperup/3.jpg",
+        "data/assets/office/chairs/asperup/thumbnail.jpg"
       ]
     },
     {
       "id": 17,
-      "title": "Shelving unit TRAPPEDAL 5 shlv oak/black",
-      "description": "Deco veneer and metal. 5 shelves. W70 x H109 x D30 cm.",
+      "title": " TRAPPEDAL",
+      "description": "Shelving unit. Deco veneer and metal. 5 shelves. W70 x H109 x D30 cm.",
       "price": 70,
       "discountPercentage": 22,
       "rating": 4.1,
@@ -299,33 +299,33 @@
       "category": "Storage",
       "thumbnail": "data/assets/storage/divider/trappedal/thumbnail.jpg",
       "images": [
-        "./assets/storage/divider/trappedal/1.jpg",
-        "./assets/storage/divider/trappedal/2.jpg",
-        "./assets/storage/divider/trappedal/3.jpg",
-        "./assets/storage/divider/trappedal/thumbnail.jpg"
+        "data/assets/storage/divider/trappedal/1.jpg",
+        "data/assets/storage/divider/trappedal/2.jpg",
+        "data/assets/storage/divider/trappedal/3.jpg",
+        "data/assets/storage/divider/trappedal/thumbnail.jpg"
       ]
     },
     {
       "id": 18,
-      "title": "Bookcase MARKSKEL 2 drawers white/oak",
-      "description": "Deco veneer and MDF. Drawers with full extension slides. W90 x H153 x D36 cm.",
+      "title": "MARKSKEL",
+      "description": "Bookcase. Deco veneer and MDF. Drawers with full extension slides. W90 x H153 x D36 cm.",
       "price": 165,
       "discountPercentage": 30,
       "rating": 4.5,
       "stock": 88,
-      "type": "Bkcases/Room divider",
+      "type": "Bkcase/Room divider",
       "category": "Storage",
       "thumbnail": "data/assets/storage/divider/markskel/thumbnail.jpg",
       "images": [
-        "./assets/storage/divider/markskel/1.jpg",
-        "./assets/storage/divider/markskel/2.jpg",
-        "./assets/storage/divider/markskel/3.jpg",
-        "./assets/storage/divider/markskel/thumbnail.jpg"
+        "data/assets/storage/divider/markskel/1.jpg",
+        "data/assets/storage/divider/markskel/2.jpg",
+        "data/assets/storage/divider/markskel/3.jpg",
+        "data/assets/storage/divider/markskel/thumbnail.jpg"
       ]
     },
     {
       "id": 19,
-      "title": "Wardrobe JENSLEV 145x176 oak",
+      "title": "JENSLEV",
       "description": "Deco veneer. 3 doors + 3 drawers. Wardrobe interior: 4 shelves and 2 hanging rails. W145 x H176 x D50 cm.",
       "price": 230,
       "discountPercentage": 15,
@@ -335,15 +335,15 @@
       "category": "Storage",
       "thumbnail": "data/assets/storage/wardrobe/jenslev/thumbnail.jpg",
       "images": [
-        "./assets/storage/wardrobe/jenslev/1.jpg",
-        "./assets/storage/wardrobe/jenslev/2.jpg",
-        "./assets/storage/diwardrobevider/jenslev/3.jpg",
-        "./assets/storage/wardrobe/jenslev/thumbnail.jpg"
+        "data/assets/storage/wardrobe/jenslev/1.jpg",
+        "data/assets/storage/wardrobe/jenslev/2.jpg",
+        "data/assets/storage/diwardrobevider/jenslev/3.jpg",
+        "data/assets/storage/wardrobe/jenslev/thumbnail.jpg"
       ]
     },
     {
       "id": 20,
-      "title": "Wardrobe FREDENSBORG 183x200 white",
+      "title": "FREDENSBORG",
       "description": "Deco veneer. 4 doors + 2 drawers. Wardrobe interior: 8 shelves and 1 hanging rail. W183 x H200 x D64 cm.",
       "price": 425,
       "discountPercentage": 20,
@@ -353,10 +353,10 @@
       "category": "Storage",
       "thumbnail": "data/assets/storage/wardrobe/fredensborg/thumbnail.jpg",
       "images": [
-        "./assets/storage/wardrobe/fredensborg/1.jpg",
-        "./assets/storage/wardrobe/fredensborg/2.jpg",
-        "./assets/storage/wardrobe/fredensborg/3.jpg",
-        "./assets/storage/wardrobe/fredensborg/thumbnail.jpg"
+        "data/assets/storage/wardrobe/fredensborg/1.jpg",
+        "data/assets/storage/wardrobe/fredensborg/2.jpg",
+        "data/assets/storage/wardrobe/fredensborg/3.jpg",
+        "data/assets/storage/wardrobe/fredensborg/thumbnail.jpg"
       ]
     }
   ],

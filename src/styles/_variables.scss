@@ -1,7 +1,14 @@
+$light-color: #ffffff;
 $sweet-color: #e0eff6;
 $dark-color: #07484a;
 $semi-dark-color: #70908b;
+$first-checkbox-color: #caf3e5;
+$second-checkbox-color: #eeebff;
+$third-checkbox-color: #fff4e7;
+$serch-color: #f0f0f0;
+$stars-color: #ffcc00;
 $background-color: #fff7ee;
+
 
 %Open-Sans-400 {
   font-family: 'Open Sans';
@@ -46,10 +53,95 @@ $background-color: #fff7ee;
     #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (1920 - 320)));
   }
 }
+
+@mixin go-adaptive1275-1920($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: 1920px) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 1275px) / (1920 - 1275)));
+  }
+}
+
+@mixin go-adaptive1400-1920($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: 1920px) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 1400px) / (1920 - 1400)));
+  }
+}
+
+@mixin go-adaptive1000-1400($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: 1400px) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 1000px) / (1400 - 1000)));
+  }
+}
+
+@mixin go-adaptive1000-1920($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: 1920px) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 1000px) / (1920 - 1000)));
+  }
+}
+
+@mixin go-adaptive785-1030($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: 1030px) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 785px) / (1030 - 785)));
+  }
+}
+
+@mixin go-adaptive545-785($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: 785px) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 545px) / (785 - 545)));
+  }
+}
+
+@mixin go-adaptive320-545($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: 545px) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (545 - 320)));
+  }
+}
+
+@mixin go-adaptive1030-1275($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: 1275px) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 1030px) / (1275 - 1030)));
+  }
+}
+
 @mixin go-adaptive320-640($property, $startSize, $minSize) {
   $addSize: $startSize - $minSize;
   @media (max-width: 640px) {
     #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (640 - 320)));
+  }
+}
+
+@mixin button {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: $semi-dark-color;
+  color: $light-color;
+  cursor: pointer;
+  @extend %Roboto-400;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: $dark-color;
+  }
+
+  &:active {
+    opacity: 0.9;
   }
 }
 

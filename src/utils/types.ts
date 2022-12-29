@@ -3,9 +3,21 @@ export type RoutesData = {
   path?: string;
 };
 
-export type CartProducts = {
-  id: number[];
-  amount: number[];
+//===============ToDo=================
+//===========The same type============
+
+export type Product = {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
+  type: string;
+  category: string;
+  thumbnail: string;
+  images: string[];
 };
 
 export type ProductProperties = {
@@ -20,6 +32,11 @@ export type ProductProperties = {
   category: string;
   thumbnail: string;
   images: string[];
+};
+
+export type CartProducts = {
+  id: number[];
+  amount: number[];
 };
 
 export type Promocodes = {
