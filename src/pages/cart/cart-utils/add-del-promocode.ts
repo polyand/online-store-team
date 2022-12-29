@@ -1,3 +1,4 @@
+import { headerActions } from 'components/header/header';
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { inCart } from 'utils/saveCart';
 import { changeSummaryCost } from './change-sum-cost';
@@ -23,6 +24,7 @@ function addPromocode() {
     changeSummaryCost(inCart, promoCodes);
     stylePromo();
     createPromoBlock(promoCodes);
+    headerActions();
   }
 }
 
@@ -50,6 +52,7 @@ export function delPromocode(event: Event) {
           promoCodes.name.splice(delIndex, 1);
           promoCodes.percentDicsount.splice(delIndex, 1);
           changeSummaryCost(inCart, promoCodes);
+          headerActions();
         }
       });
     }

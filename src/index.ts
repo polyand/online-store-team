@@ -4,10 +4,12 @@ import { header } from 'components/header';
 import { footer } from 'components/footer';
 import './index.scss';
 import { cartActions } from 'pages/cart/cart';
+import { headerActions } from 'components/header/header';
 
 function onLoadFunctions() {
   appendPage();
   cartActions();
+  headerActions();
 }
 
 //window.addEventListener('click', router);

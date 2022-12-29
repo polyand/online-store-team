@@ -6,6 +6,7 @@ import { triggerEmptyCart } from './trigger-empty-cart';
 import { changeSummaryCost } from './change-sum-cost';
 import { changeSummaryAmount } from './change-sum-amount';
 import { promoCodes } from './promo-codes';
+import { headerActions } from 'components/header/header';
 
 function calculateProductsPrice(productAmount: number, productPrice: number, i: number) {
   const productTotalPrice = document.querySelectorAll('.price-amount');
@@ -31,6 +32,7 @@ export function changeProductAmount(
       calculateProductsPrice(inCart.amount[inCartIndex], productData.price, index);
       changeSummaryCost(inCart, promoCodes);
       changeSummaryAmount(inCart);
+      headerActions();
       if (productData.stock === Number(amount) && buttonAdd instanceof HTMLButtonElement) {
         buttonAdd.disabled = true;
       }
@@ -46,6 +48,7 @@ export function changeProductAmount(
       calculateProductsPrice(inCart.amount[inCartIndex], productData.price, index);
       changeSummaryCost(inCart, promoCodes);
       changeSummaryAmount(inCart);
+      headerActions();
       if (inCart.amount[inCartIndex] === 0) {
         inCart.amount.splice(inCartIndex, 1);
         inCart.id.splice(inCartIndex, 1);
@@ -53,9 +56,11 @@ export function changeProductAmount(
         if (inCart.id.length === 0) {
           triggerEmptyCart();
           saveProductsInCart();
+          headerActions();
         } else {
           createProductItem(inCart);
           saveProductsInCart();
+          headerActions();
         }
       }
     }
