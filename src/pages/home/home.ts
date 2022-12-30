@@ -5,6 +5,7 @@ import { sortProducts } from './home-utils/sortProducts';
 import { searchProducts } from './home-utils/searchProducts';
 import { changeViewProducts } from './home-utils/changeViewProducts';
 import { createProductsList } from './home-utils/createProductsList';
+import { addDeleteProduct } from './home-utils/addDeleteProduct';
 import HomeHTML from './home.html';
 import './home.scss';
 
@@ -20,4 +21,5 @@ export function homeActions() {
   searchProducts();
   changeViewProducts();
   createProductsList();
+  addDeleteProduct();
 }

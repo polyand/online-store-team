@@ -1,4 +1,4 @@
-import { Product } from 'utils/types';
+import { ProductProperties } from 'utils/types';
 import { getHtmlElement } from 'utils/getHtmlElement';
 import data from 'data/data.json';
 
@@ -6,7 +6,7 @@ export function createCheckboxFilter(kind: string) {
   const collection: { [key: string]: number } = {};
 
   // Create collection of properties
-  data.products.forEach((element: Product) => {
+  data.products.forEach((element: ProductProperties) => {
     if (Object.prototype.hasOwnProperty.call(collection, element[kind])) {
       collection[element[kind]] = collection[element[kind]] + 1;
     } else {
