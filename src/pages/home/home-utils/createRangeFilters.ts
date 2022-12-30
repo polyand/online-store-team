@@ -116,7 +116,7 @@ function controltoRange(
   }
 }
 
-export function useRangeFilters() {
+export function createRangeFilters() {
   const fromPrice = getHtmlElement(document, '#fromPrice');
   const toPrice = getHtmlElement(document, '#toPrice');
   const fromStock = getHtmlElement(document, '#fromStock');

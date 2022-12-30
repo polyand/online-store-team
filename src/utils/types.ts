@@ -34,3 +34,10 @@ export type PaginationData = {
   currentPage: number;
   productsPerPage: number;
 };
+
+export type Filters = {
+  price: number[];
+  stock: number[];
+  type: string[];
+  category: string[];
+};

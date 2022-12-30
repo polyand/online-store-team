@@ -1,13 +1,29 @@
 import { ProductProperties } from 'utils/types';
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { filtredIdList } from 'utils/filtredProducts';
 import data from 'data/data.json';
 
 const products: ProductProperties[] = data.products;
 
 export function createProductsList() {
-  const productsList = getHtmlElement(document, '.home__products-list');
+  let productsFiltredList: ProductProperties[] = [];
 
-  products.forEach((product) => {
+  if (filtredIdList.length === 0) {
+    productsFiltredList = products;
+  } else {
+    filtredIdList.forEach((id) => {
+      products.forEach((product) => {
+        if (id === product.id) {
+          productsFiltredList.push(product);
+        }
+      });
+    });
+  }
+
+  const productsList = getHtmlElement(document, '.home__products-list');
+  productsList.innerHTML = '';
+
+  productsFiltredList.forEach((product) => {
     const item = document.createElement('div');
     item.classList.add('home__product-item', 'product-item', 'product-item_block');
     item.id = `${product.id}`;
