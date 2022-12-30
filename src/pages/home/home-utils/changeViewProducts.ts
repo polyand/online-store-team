@@ -25,13 +25,13 @@ export function changeViewProducts() {
     productItem.forEach((item: Element) => {
       const productsItemImg = getHtmlElement(item, '.product-item__img');
       const listInfo = getHtmlElement(item, '.list-info');
-      const footerInfo = getHtmlElement(item, '.footer-info');
+      const footerInfo = getHtmlElement(item, '.product-footer-info');
       item.classList.toggle('product-item_block');
       item.classList.toggle('product-item_list');
       productsItemImg.classList.toggle('product-item__img_block');
       productsItemImg.classList.toggle('product-item__img_list');
-      footerInfo.classList.toggle('footer-info_block');
-      footerInfo.classList.toggle('footer-info_list');
+      footerInfo.classList.toggle('product-footer-info_block');
+      footerInfo.classList.toggle('product-footer-info_list');
       listInfo.classList.toggle('invisible');
     });
 
