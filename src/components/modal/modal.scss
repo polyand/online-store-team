@@ -1,0 +1,125 @@
+@import '../../styles/variables';
+
+.modal {
+  &__wrapper {
+    width: 40%;
+    margin: 5% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid $dark-color;
+    border-radius: 5px;
+    background-color: $background-color;
+  }
+
+  &__header {
+    margin: 2% 0;
+    @include go-adaptive320-1920('font-size', 28, 10);
+    color: $dark-color;
+    @extend %Open-Sans-400;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .modal-input {
+      width: 85%;
+      border: 1px solid $semi-dark-color;
+      border-radius: 10px;
+      padding: 5px;
+      margin: 2% 0 0 0;
+      background-color: transparent;
+      text-align: center;
+
+      &::placeholder {
+        text-align: center;
+      }
+    }
+
+    .credit-card {
+      &__header {
+        margin: 2% 0;
+        text-align: center;
+        @include go-adaptive320-1920('font-size', 25, 8);
+        color: $dark-color;
+        @extend %Open-Sans-400;
+      }
+
+      &__body {
+        width: 80%;
+        padding: 3%;
+        margin: 0 auto;
+        border: 1px solid $background-color;
+        border-radius: 5px;
+        background: linear-gradient(90deg, $semi-dark-color, $dark-color);
+        display: grid;
+        grid-template:
+          [start] 'imag number number number number number number number' 1fr [row2]
+          [row2] 'label_date label_date date date label_cvv label_cvv cvv cvv' 1fr [end] / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 5%;
+
+        &-image {
+          grid-area: imag;
+          width: 100%;
+          margin-bottom: 10%;
+        }
+
+        &-number,
+        &-date,
+        &-cvv {
+          @include go-adaptive320-1920('max-height', 30, 15);
+          align-self: center;
+          background-color: transparent;
+          border: 1px solid $background-color;
+          padding: 5px;
+          text-align: center;
+          color: $background-color;
+
+          &::placeholder {
+            color: $background-color;
+          }
+        }
+
+        &-number {
+          grid-area: number;
+        }
+
+        &-date-label {
+          grid-area: label_date;
+          align-self: center;
+          text-align: end;
+        }
+
+        &-date {
+          grid-area: date;
+        }
+
+        &-cvv-label {
+          grid-area: label_cvv;
+          align-self: center;
+          text-align: end;
+        }
+
+        &-cvv {
+          grid-area: cvv;
+        }
+      }
+    }
+
+    &-validity {
+      margin: 2% auto;
+      @include go-adaptive320-1920('font-size', 23, 10);
+      color: red;
+      font-weight: 700;
+    }
+
+    &-submit {
+      margin: 4% auto 2%;
+      @include button;
+      @include go-adaptive320-1920('width', 200, 100);
+      @include go-adaptive320-1920('height', 50, 30);
+    }
+  }
+}
