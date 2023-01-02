@@ -8,17 +8,24 @@ import { headerActions } from 'components/header/header';
 import './index.scss';
 import { modal } from 'components/modal';
 import { modalActions } from 'components/modal/modal';
+import { toggleModal } from 'components/modal/modal-utils/toggle-modal';
 
 function onLoadFunctions() {
   appendPage();
   headerActions();
   modalActions();
+  toggleModal();
   // cartActions();
   // homeActions();
 }
 
+function onPopstateFunctions() {
+  appendPage();
+  toggleModal();
+}
+
 //window.addEventListener('click', router);
-window.addEventListener('popstate', appendPage);
+window.addEventListener('popstate', onPopstateFunctions);
 document.addEventListener('DOMContentLoaded', onLoadFunctions);
 
 const headerElement = document.querySelector('.header');

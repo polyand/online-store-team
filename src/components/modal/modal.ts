@@ -1,6 +1,6 @@
 import { createHtmlElement } from 'utils/createHtml';
 import { getHtmlElement } from 'utils/getHtmlElement';
-import { closeModal } from './modal-utils/close-modal';
+import { delModalQuery } from './modal-utils/del-modal-query';
 import { displayCard } from './modal-utils/display-card';
 import { showMsgByClick, showWarningMsg } from './modal-utils/show-warning-msg';
 import modalHTML from './modal.html';
@@ -18,5 +18,5 @@ export function modalActions() {
   form.addEventListener('focusout', showWarningMsg);
   cardBlock.addEventListener('input', displayCard);
   submit.addEventListener('click', showMsgByClick);
-  modalWrapper.addEventListener('click', closeModal);
+  modalWrapper.addEventListener('click', delModalQuery);
 }
