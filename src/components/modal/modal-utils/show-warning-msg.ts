@@ -134,6 +134,7 @@ export function showMsgByClick(event: Event) {
     const header = getHtmlElement(document, '.modal__header');
     const form = getHtmlElement(document, '.modal__form');
     const completeMsg = getHtmlElement(document, '.modal-complete');
+    const modal = getHtmlElement(document, '#modal');
     header.classList.add('modal-hide');
     form.classList.add('modal-hide');
     completeMsg.classList.remove('modal-hide');
@@ -142,6 +143,7 @@ export function showMsgByClick(event: Event) {
       header.classList.remove('modal-hide');
       form.classList.remove('modal-hide');
       completeMsg.classList.add('modal-hide');
+      modal.classList.add('modal-hide');
     }, 3000);
   }
 }

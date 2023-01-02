@@ -1,5 +1,6 @@
 import { createHtmlElement } from 'utils/createHtml';
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { closeModal } from './modal-utils/close-modal';
 import { displayCard } from './modal-utils/display-card';
 import { showMsgByClick, showWarningMsg } from './modal-utils/show-warning-msg';
 import modalHTML from './modal.html';
@@ -13,7 +14,9 @@ export function modalActions() {
   const form = getHtmlElement(document, '.modal__form');
   const cardBlock = getHtmlElement(document, '.credit-card__body');
   const submit = getHtmlElement(document, '.modal__form-submit');
+  const modalWrapper = getHtmlElement(document, '#modal');
   form.addEventListener('focusout', showWarningMsg);
   cardBlock.addEventListener('input', displayCard);
   submit.addEventListener('click', showMsgByClick);
+  modalWrapper.addEventListener('click', closeModal);
 }
