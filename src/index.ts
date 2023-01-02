@@ -7,10 +7,12 @@ import { headerActions } from 'components/header/header';
 // import { cartActions } from 'pages/cart/cart';
 import './index.scss';
 import { modal } from 'components/modal';
+import { modalActions } from 'components/modal/modal';
 
 function onLoadFunctions() {
   appendPage();
   headerActions();
+  modalActions();
   // cartActions();
   // homeActions();
 }

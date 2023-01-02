@@ -3,6 +3,8 @@
 .modal {
   &__wrapper {
     width: 40%;
+    max-height: 85vh;
+    overflow: auto;
     margin: 5% auto;
     display: flex;
     flex-direction: column;
@@ -32,6 +34,7 @@
       margin: 2% 0 0 0;
       background-color: transparent;
       text-align: center;
+      @include go-adaptive320-1920('font-size', 25, 9);
 
       &::placeholder {
         text-align: center;
@@ -63,17 +66,18 @@
         &-image {
           grid-area: imag;
           width: 100%;
-          margin-bottom: 10%;
+          align-self: center;
         }
 
         &-number,
         &-date,
         &-cvv {
           @include go-adaptive320-1920('max-height', 30, 15);
+          @include go-adaptive320-1920('font-size', 24, 8);
           align-self: center;
           background-color: transparent;
           border: 1px solid $background-color;
-          padding: 5px;
+          padding: 5px 0;
           text-align: center;
           color: $background-color;
 
@@ -90,6 +94,7 @@
           grid-area: label_date;
           align-self: center;
           text-align: end;
+          @include go-adaptive320-1920('font-size', 26, 8);
         }
 
         &-date {
@@ -100,6 +105,7 @@
           grid-area: label_cvv;
           align-self: center;
           text-align: end;
+          @include go-adaptive320-1920('font-size', 26, 8);
         }
 
         &-cvv {
@@ -108,11 +114,19 @@
       }
     }
 
-    &-validity {
-      margin: 2% auto;
-      @include go-adaptive320-1920('font-size', 23, 10);
-      color: red;
-      font-weight: 700;
+    &-validity-card,
+    &-validity-name,
+    &-validity-tel,
+    &-validity-adress,
+    &-validity-email {
+      div {
+        margin: 2% auto 0;
+        padding: 0 3%;
+        text-align: center;
+        @include go-adaptive320-1920('font-size', 23, 10);
+        color: red;
+        font-weight: 700;
+      }
     }
 
     &-submit {
@@ -121,5 +135,12 @@
       @include go-adaptive320-1920('width', 200, 100);
       @include go-adaptive320-1920('height', 50, 30);
     }
+  }
+
+  &-complete {
+    margin: 5% 0;
+    @include go-adaptive320-1920('font-size', 35, 14);
+    color: $dark-color;
+    @extend %Open-Sans-700;
   }
 }
