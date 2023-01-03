@@ -1,28 +1,25 @@
 import { ProductProperties } from 'utils/types';
 import { getHtmlElement } from 'utils/getHtmlElement';
 import data from 'data/data.json';
+import { useRangeFilter, defaultUseRangeFilter } from './useRangeFilter';
+import { compareNumeric } from 'utils/helpersArray';
+
+export let price: number[] = [];
+export let stock: number[] = [];
 
 const products: ProductProperties[] = data.products;
-let price: number[] = [];
-let stock: number[] = [];
-
 products.forEach((product) => {
   price.push(product.price);
   stock.push(product.stock);
 });
 
-function compareNumeric(a: number, b: number): number {
-  if (a > b) return 1;
-  if (a < b) return -1;
-  return 0;
-}
 price = price.sort(compareNumeric);
 stock = stock.sort(compareNumeric);
 
 price.splice(1, price.length - 2);
 stock.splice(1, stock.length - 2);
 
-function fillSlider(
+export function fillSlider(
   from: HTMLElement,
   to: HTMLElement,
   sliderColor: string,
@@ -60,28 +57,8 @@ function getParsed(currentFrom: HTMLElement, currentTo: HTMLElement): number[] {
   return [from, to];
 }
 
-function controlfromRange(
-  fromRange: HTMLElement,
-  toRange: HTMLElement,
-  sliderColor: string,
-  fromValue: HTMLElement,
-  type: number[],
-  unit: string
-): void {
-  const [from, to]: number[] = getParsed(fromRange, toRange);
-  fillSlider(fromRange, toRange, sliderColor, '#07484a', toRange);
-  if (!(fromRange instanceof HTMLInputElement)) {
-    throw new Error('Must be an HTMLInputElement!');
-  }
-  fromValue.innerHTML = `${Math.ceil((from * type[1]) / 100) + type[0]}${unit}`;
-  if (from > to) {
-    fromRange.value = `${to}`;
-    fromValue.innerHTML = `${Math.ceil((to * type[1]) / 100) + type[0]}${unit}`;
-  }
-}
-
-function setToggleAccessible(currentTarget: HTMLElement, id: string): void {
-  const toRange = getHtmlElement(document, `#${id}`);
+export function setToggleAccessible(currentTarget: HTMLElement, kind: string): void {
+  const toRange = getHtmlElement(document, `#to${kind[0].toUpperCase() + kind.slice(1)}`);
   if (!(currentTarget instanceof HTMLInputElement)) {
     throw new Error('Must be an HTMLInputElement!');
   }
@@ -92,53 +69,86 @@ function setToggleAccessible(currentTarget: HTMLElement, id: string): void {
   }
 }
 
+function controlfromRange(
+  fromRange: HTMLElement,
+  toRange: HTMLElement,
+  sliderColor: string,
+  fromValue: HTMLElement,
+  kind: string,
+  unit: string
+): void {
+  const [from, to]: number[] = getParsed(fromRange, toRange);
+  let innerValue: number;
+  fillSlider(fromRange, toRange, sliderColor, '#07484a', toRange);
+  if (!(fromRange instanceof HTMLInputElement)) {
+    throw new Error('Must be an HTMLInputElement!');
+  }
+  innerValue = Math.ceil(from);
+  if (from > to) {
+    fromRange.value = `${to}`;
+    innerValue = Math.ceil(to);
+  }
+  fromValue.innerHTML = `${innerValue}${unit}`;
+  useRangeFilter(kind, innerValue, 'from');
+}
+
 function controltoRange(
   fromRange: HTMLElement,
   toRange: HTMLElement,
   sliderColor: string,
   toValue: HTMLElement,
-  id: string,
-  type: number[],
+  kind: string,
   unit: string
 ): void {
   const [from, to]: number[] = getParsed(fromRange, toRange);
+  let innerValue: number;
   fillSlider(fromRange, toRange, sliderColor, '#07484a', toRange);
-  setToggleAccessible(toRange, id);
+  setToggleAccessible(toRange, kind);
   if (!(toRange instanceof HTMLInputElement)) {
     throw new Error('Must be an HTMLInputElement!');
   }
   if (from <= to) {
     toRange.value = `${to}`;
-    toValue.innerHTML = `${Math.ceil((to * type[1]) / 100) + type[0]}${unit}`;
+    innerValue = Math.ceil(to);
   } else {
     toRange.value = `${from}`;
-    toValue.innerHTML = `${Math.ceil((from * type[1]) / 100) + type[0]}${unit}`;
+    innerValue = Math.ceil(from);
   }
+  toValue.innerHTML = `${innerValue}${unit}`;
+  useRangeFilter(kind, innerValue, 'to');
 }
 
-export function createRangeFilters() {
-  const fromPrice = getHtmlElement(document, '#fromPrice');
-  const toPrice = getHtmlElement(document, '#toPrice');
-  const fromStock = getHtmlElement(document, '#fromStock');
-  const toStock = getHtmlElement(document, '#toStock');
-  const fromPriceValue = getHtmlElement(document, '.home__filter-price .filter-range__from-value');
-  const toPriceValue = getHtmlElement(document, '.home__filter-price .filter-range__to-value');
-  const fromStockValue = getHtmlElement(document, '.home__filter-stock .filter-range__from-value');
-  const toStockValue = getHtmlElement(document, '.home__filter-stock .filter-range__to-value');
-  fromPriceValue.innerHTML = `${price[0]}$`;
-  toPriceValue.innerHTML = `${price[1]}$`;
-  fromStockValue.innerHTML = `${stock[0]}`;
-  toStockValue.innerHTML = `${stock[1]}`;
+export function createRangeFilters(kind: string) {
+  const [unit, value, color] = kind === 'price' ? ['$', price, '#e0eff6'] : ['', stock, '#fff4e7'];
 
-  fillSlider(fromPrice, toPrice, '#e0eff6', '#07484a', toPrice);
-  setToggleAccessible(toPrice, 'toPrice');
+  const fromRange = getHtmlElement(document, `#from${kind[0].toUpperCase() + kind.slice(1)}`);
+  if (!(fromRange instanceof HTMLInputElement)) {
+    throw new Error('Must be an HTMLInputElement!');
+  }
 
-  fillSlider(fromStock, toStock, '#fff4e7', '#07484a', toStock);
-  setToggleAccessible(toStock, 'toStock');
+  const toRange = getHtmlElement(document, `#to${kind[0].toUpperCase() + kind.slice(1)}`);
+  if (!(toRange instanceof HTMLInputElement)) {
+    throw new Error('Must be an HTMLInputElement!');
+  }
 
-  fromPrice.oninput = () => controlfromRange(fromPrice, toPrice, '#e0eff6', fromPriceValue, price, '$');
-  toPrice.oninput = () => controltoRange(fromPrice, toPrice, '#e0eff6', toPriceValue, 'toPrice', price, '$');
+  fromRange.min = `${value[0]}`;
+  fromRange.max = `${value[1]}`;
+  fromRange.value = `${value[0]}`;
 
-  fromStock.oninput = () => controlfromRange(fromStock, toStock, '#fff4e7', fromStockValue, stock, '');
-  toStock.oninput = () => controltoRange(fromStock, toStock, '#fff4e7', toStockValue, 'toStock', stock, '');
+  toRange.min = `${value[0]}`;
+  toRange.max = `${value[1]}`;
+  toRange.value = `${value[1]}`;
+
+  const fromRangeValue = getHtmlElement(document, `.home__filter-${kind} .filter-range__from-value`);
+  const toRangeValue = getHtmlElement(document, `.home__filter-${kind} .filter-range__to-value`);
+
+  fromRangeValue.innerHTML = `${value[0] + unit}`;
+  toRangeValue.innerHTML = `${value[1] + unit}`;
+
+  defaultUseRangeFilter(kind, value[0], value[1]);
+  fillSlider(fromRange, toRange, color, '#07484a', toRange);
+  setToggleAccessible(toRange, kind);
+
+  fromRange.oninput = () => controlfromRange(fromRange, toRange, color, fromRangeValue, kind, unit);
+  toRange.oninput = () => controltoRange(fromRange, toRange, color, toRangeValue, kind, unit);
 }

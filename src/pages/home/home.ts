@@ -17,7 +17,8 @@ export const home = () => {
 export function homeActions() {
   createCheckboxFilter('category');
   createCheckboxFilter('type');
-  createRangeFilters();
+  createRangeFilters('price');
+  createRangeFilters('stock');
   sortProducts();
   searchProducts();
   changeViewProducts();

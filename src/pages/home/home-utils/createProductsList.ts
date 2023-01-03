@@ -1,16 +1,55 @@
 import { ProductProperties } from 'utils/types';
 import { getHtmlElement } from 'utils/getHtmlElement';
-import { filtredIdList } from 'utils/filtredProducts';
+import { filtredIdList } from './filtredProducts';
+import { checkUseFilters } from './checkUseFilters';
+import { correctionCheckboxItemQuantity } from './correctionCheckboxItemQuantity';
 import data from 'data/data.json';
 
 const products: ProductProperties[] = data.products;
+export let productsFiltredList: ProductProperties[];
 
 export function createProductsList() {
-  let productsFiltredList: ProductProperties[] = [];
+  productsFiltredList = [];
+  const filtersFlag: boolean = checkUseFilters();
+  const fromRangeValuePrice = getHtmlElement(document, `.home__filter-price .filter-range__from-value`);
+  const fromRangeNotFoundPrice = getHtmlElement(document, `.home__filter-price .filter-range__not-found`);
+  const toRangeValuePrice = getHtmlElement(document, `.home__filter-price .filter-range__to-value`);
+  const fromRangeValueStock = getHtmlElement(document, `.home__filter-stock .filter-range__from-value`);
+  const fromRangeNotFoundStock = getHtmlElement(document, `.home__filter-stock .filter-range__not-found`);
+  const toRangeValueStock = getHtmlElement(document, `.home__filter-stock .filter-range__to-value`);
+  const toggleRangeTitleNotFound: HTMLElement[] = [fromRangeNotFoundPrice, fromRangeNotFoundStock];
+  const toggleRangeTitleFromTo: HTMLElement[] = [
+    fromRangeValuePrice,
+    toRangeValuePrice,
+    fromRangeValueStock,
+    toRangeValueStock,
+  ];
+  const productsSearchStat = getHtmlElement(document, '.home_search-stat');
+  const productsList = getHtmlElement(document, '.home__products-list');
+  productsList.innerHTML = '';
 
-  if (filtredIdList.length === 0) {
+  if (filtredIdList.length === 0 && !filtersFlag) {
     productsFiltredList = products;
   } else {
+    if (filtredIdList.length === 0 && filtersFlag) {
+      productsList.innerHTML = 'Not Products Found';
+      productsList.classList.add('home__products-list_not-found');
+
+      toggleRangeTitleNotFound.forEach((element) => {
+        if (element.classList.contains('invisible')) {
+          element.classList.remove('invisible');
+        }
+      });
+      toggleRangeTitleFromTo.forEach((element) => {
+        if (!element.classList.contains('invisible')) {
+          element.classList.add('invisible');
+        }
+      });
+      productsSearchStat.innerHTML = 'Found: 0';
+      correctionCheckboxItemQuantity('category');
+      correctionCheckboxItemQuantity('type');
+      return;
+    }
     filtredIdList.forEach((id) => {
       products.forEach((product) => {
         if (id === product.id) {
@@ -20,12 +59,30 @@ export function createProductsList() {
     });
   }
 
-  const productsList = getHtmlElement(document, '.home__products-list');
-  productsList.innerHTML = '';
+  if (productsList.classList.contains('home__products-list_not-found')) {
+    productsList.classList.remove('home__products-list_not-found');
+  }
+
+  toggleRangeTitleNotFound.forEach((element) => {
+    if (!element.classList.contains('invisible')) {
+      element.classList.add('invisible');
+    }
+  });
+  toggleRangeTitleFromTo.forEach((element) => {
+    if (element.classList.contains('invisible')) {
+      element.classList.remove('invisible');
+    }
+  });
+
+  productsSearchStat.innerHTML = `Found: ${productsFiltredList.length}`;
 
   productsFiltredList.forEach((product) => {
     const item = document.createElement('div');
-    item.classList.add('home__product-item', 'product-item', 'product-item_block');
+    if (productsList.classList.contains('home__products-list_block')) {
+      item.classList.add('home__product-item', 'product-item', 'product-item_block');
+    } else {
+      item.classList.add('home__product-item', 'product-item', 'product-item_list');
+    }
     item.id = `${product.id}`;
 
     const headerInfo = document.createElement('div');
@@ -48,7 +105,14 @@ export function createProductsList() {
     headerInfo.append(itemPrice);
 
     const listInfo = document.createElement('div');
-    listInfo.classList.add('product-item__info', 'list-info', 'invisible');
+    if (productsList.classList.contains('home__products-list_block')) {
+      listInfo.classList.add('product-item__info', 'list-info', 'invisible');
+    } else {
+      listInfo.classList.add('product-item__info', 'list-info');
+    }
+
+    const stock = document.createElement('div');
+    stock.classList.add('list-info__stock');
 
     const discount = document.createElement('div');
     discount.classList.add('list-info__discount');
@@ -58,6 +122,18 @@ export function createProductsList() {
 
     const discription = document.createElement('div');
     discription.classList.add('list-info__description');
+
+    const listInfoStockTitle = document.createElement('span');
+    listInfoStockTitle.classList.add('list-info__title');
+
+    const listInfoStockValue = document.createElement('span');
+    listInfoStockValue.classList.add('list-info__value');
+
+    listInfoStockTitle.innerHTML = 'Stock: ';
+    listInfoStockValue.innerHTML = `${product.stock}`;
+
+    stock.append(listInfoStockTitle);
+    stock.append(listInfoStockValue);
 
     const listInfoDiscountTitle = document.createElement('span');
     listInfoDiscountTitle.classList.add('list-info__title');
@@ -95,16 +171,25 @@ export function createProductsList() {
     discription.append(listInfoDescriptionTitle);
     discription.append(listInfoDescriptionValue);
 
+    listInfo.append(stock);
     listInfo.append(discount);
     listInfo.append(category);
     listInfo.append(discription);
 
     const itemImg = document.createElement('div');
-    itemImg.classList.add('product-item__img', 'product-item__img_block');
+    if (productsList.classList.contains('home__products-list_block')) {
+      itemImg.classList.add('product-item__img', 'product-item__img_block');
+    } else {
+      itemImg.classList.add('product-item__img', 'product-item__img_list');
+    }
     itemImg.style.backgroundImage = `url('${product.thumbnail}')`;
 
     const footerInfo = document.createElement('div');
-    footerInfo.classList.add('product-item__info', 'product-footer-info', 'product-footer-info_block');
+    if (productsList.classList.contains('home__products-list_block')) {
+      footerInfo.classList.add('product-item__info', 'product-footer-info', 'product-footer-info_block');
+    } else {
+      footerInfo.classList.add('product-item__info', 'product-footer-info', 'product-footer-info_list');
+    }
 
     const ratingTitle = document.createElement('div');
     ratingTitle.classList.add('product-footer-info__rating-title');
@@ -131,4 +216,6 @@ export function createProductsList() {
 
     productsList.append(item);
   });
+  correctionCheckboxItemQuantity('category');
+  correctionCheckboxItemQuantity('type');
 }
