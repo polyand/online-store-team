@@ -8,6 +8,7 @@ import { changeSummaryAmount } from './cart-utils/change-sum-amount';
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { promoCodes, stylePromo } from './cart-utils/promo-codes';
 import { addDelPromocode } from './cart-utils/add-del-promocode';
+import { setModalQuery } from './cart-utils/set-modal-query';
 
 export const cart = () => {
   return createHtmlElement(cartHTML);
@@ -21,4 +22,6 @@ export function cartActions() {
   const input = getHtmlElement(document, '.summary__promo-input');
   input.addEventListener('input', stylePromo);
   addDelPromocode();
+  const modalButton = getHtmlElement(document, '.summary__submit');
+  modalButton.addEventListener('click', setModalQuery);
 }

@@ -41,3 +41,15 @@ export type Filters = {
   type: string[];
   category: string[];
 };
+
+export type WarningMessages = {
+  name: string;
+  tel: string;
+  adress: string;
+  email: string;
+  cardNum: string;
+  cardDate: string;
+  cardCvv: string;
+};
+
+export type ValidateFunction = (input: HTMLInputElement) => boolean;
