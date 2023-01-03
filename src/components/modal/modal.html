@@ -1,1 +1,27 @@
-<div class="modal-test">Test modal</div>
+<div class="modal__wrapper">
+  <div class="modal__header">Enter your personal data</div>
+  <form action="#" class="modal__form" novalidate>
+    <input type="text" class="modal__form-name modal-input" id="name" placeholder="Full name" />
+    <div class="modal__form-validity-name"></div>
+    <input type="tel" class="modal__form-tel modal-input" id="tel" placeholder="Phone number" />
+    <div class="modal__form-validity-tel"></div>
+    <input type="text" class="modal__form-adress modal-input" id="adress" placeholder="Delivery adress" />
+    <div class="modal__form-validity-adress"></div>
+    <input type="email" class="modal__form-email modal-input" id="email" placeholder="E-mail" />
+    <div class="modal__form-validity-email"></div>
+    <div class="modal__form-credit-card credit-card">
+      <div class="credit-card__header">Enter card details</div>
+      <div class="credit-card__body">
+        <img src="../../assets/img/unknown-card.png" alt="unknown credit card" class="credit-card__body-image" />
+        <input type="text" class="credit-card__body-number" id="cardNum" placeholder="card number" />
+        <label for="exp-date" class="credit-card__body-date-label">Exp.date:</label>
+        <input type="text" class="credit-card__body-date" id="cardDate" placeholder="MM/YY" />
+        <label for="cvv" class="credit-card__body-cvv-label">CVV:</label>
+        <input type="text" class="credit-card__body-cvv" id="cardCvv" placeholder="cvv" />
+      </div>
+    </div>
+    <div class="modal__form-validity-card"></div>
+    <input type="submit" value="Confirm" class="modal__form-submit" />
+  </form>
+  <div class="modal-complete modal-hide">Your order is processed!</div>
+</div>
