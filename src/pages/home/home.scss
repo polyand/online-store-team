@@ -103,6 +103,10 @@
             }
           }
         }
+
+        .filter-checkbox__item_filtred {
+          color: $semi-dark-color;
+        }
       }
     }
 
@@ -159,6 +163,7 @@
         align-items: center;
 
         .filter-range__from-value,
+        .filter-range__not-found,
         .filter-range__to-value {
           color: $dark-color;
           text-align: center;
@@ -591,6 +596,7 @@
         align-self: center;
 
         .list-info__discount,
+        .list-info__stock,
         .list-info__category,
         .list-info__description {
           margin: 5px 0;
@@ -732,6 +738,16 @@
       overflow-y: visible;
       max-height: 100%;
     }
+  }
+
+  .home__products-list_not-found {
+    grid-template-columns: 1fr;
+    text-align: center;
+    @extend %Playfair-Display-700;
+    color: $dark-color;
+    font-size: 30px;
+    height: 100%;
+    align-items: center;
   }
 }
 

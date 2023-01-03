@@ -35,6 +35,13 @@ export type PaginationData = {
   productsPerPage: number;
 };
 
+export type Filters = {
+  price: number[];
+  stock: number[];
+  type: string[];
+  category: string[];
+};
+
 export type WarningMessages = {
   name: string;
   tel: string;

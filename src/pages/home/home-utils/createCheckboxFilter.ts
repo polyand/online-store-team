@@ -6,11 +6,11 @@ export function createCheckboxFilter(kind: string) {
   const collection: { [key: string]: number } = {};
 
   // Create collection of properties
-  data.products.forEach((element: ProductProperties) => {
-    if (Object.prototype.hasOwnProperty.call(collection, element[kind])) {
-      collection[element[kind]] = collection[element[kind]] + 1;
+  data.products.forEach((product: ProductProperties) => {
+    if (Object.prototype.hasOwnProperty.call(collection, product[kind])) {
+      collection[product[kind]] = collection[product[kind]] + 1;
     } else {
-      collection[element[kind]] = 1;
+      collection[product[kind]] = 1;
     }
   });
 
@@ -20,6 +20,7 @@ export function createCheckboxFilter(kind: string) {
     item.classList.add('filter-checkbox__item');
     const input = document.createElement('input');
     input.type = 'checkbox';
+    input.id = key;
     input.classList.add('filter-checkbox__input');
     const label = document.createElement('label');
     label.classList.add('filter-checkbox__lebel');
