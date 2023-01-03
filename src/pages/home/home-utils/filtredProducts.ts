@@ -1,6 +1,7 @@
 import { Filters } from 'utils/types';
 import { ProductProperties } from 'utils/types';
 import { createProductsList } from './createProductsList';
+import { checkTextFilter } from './checkTextFilter';
 import { containsElement, addElement } from 'utils/helpersArray';
 import data from 'data/data.json';
 
@@ -10,6 +11,7 @@ export const filters: Filters = {
   stock: [],
   type: [],
   category: [],
+  text: '',
 };
 
 function createFiltredIdList(list: number[]): void {
@@ -29,7 +31,7 @@ function createFiltredIdList(list: number[]): void {
     {}
   );
   for (const key in map) {
-    if (map[key] == 4) {
+    if (map[key] == 5) {
       filtredIdList.push(+key);
     }
   }
@@ -37,14 +39,17 @@ function createFiltredIdList(list: number[]): void {
 }
 
 export function createFiltredCollection(): void {
-  const filtredProductsByKind: Filters = {
+  const filtredProductsByKind: {
+    [key: string]: [];
+  } = {
     price: [],
     stock: [],
     type: [],
     category: [],
+    text: [],
   };
   let resultList: number[] = [];
-
+  console.log(filters);
   for (const key in filters) {
     data.products.forEach((product: ProductProperties) => {
       if (key === 'stock' || key === 'price') {
@@ -52,19 +57,25 @@ export function createFiltredCollection(): void {
           addElement<number>(filtredProductsByKind[key], product.id);
         }
       } else {
-        if (filters[key].length == 0) {
-          addElement<number>(filtredProductsByKind[key], product.id);
-        }
-        filters[key].forEach((kind: string) => {
-          if (product[key] === kind) {
-            if (!containsElement<number>(filtredProductsByKind[key], product.id)) {
-              addElement<number>(filtredProductsByKind[key], product.id);
-            }
+        if (key === 'category' || key === 'type') {
+          if (filters[key].length == 0) {
+            addElement<number>(filtredProductsByKind[key], product.id);
           }
-        });
+          filters[key].forEach((kind: string) => {
+            if (product[key] === kind) {
+              if (!containsElement<number>(filtredProductsByKind[key], product.id)) {
+                addElement<number>(filtredProductsByKind[key], product.id);
+              }
+            }
+          });
+        } else {
+          if (checkTextFilter(filters[key], product)) {
+            addElement<number>(filtredProductsByKind[key], product.id);
+          }
+        }
       }
     });
-
+    console.log(filtredProductsByKind.text);
     resultList = resultList.concat(filtredProductsByKind[key]);
   }
   createFiltredIdList(resultList);

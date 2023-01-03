@@ -7,6 +7,7 @@ import { changeViewProducts } from './home-utils/changeViewProducts';
 import { createProductsList } from './home-utils/createProductsList';
 import { addDeleteProduct } from './home-utils/addDeleteProduct';
 import { useCheckboxFilter } from './home-utils/useCheckboxFilter';
+import { useTextFilter } from './home-utils/useTextFilter';
 import HomeHTML from './home.html';
 import './home.scss';
 
@@ -24,6 +25,7 @@ export function homeActions() {
   changeViewProducts();
   createProductsList();
   addDeleteProduct();
+  useTextFilter();
   useCheckboxFilter('category');
   useCheckboxFilter('type');
 }
