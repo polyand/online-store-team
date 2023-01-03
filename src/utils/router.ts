@@ -3,6 +3,9 @@ import { cart } from '../pages/cart';
 import { homeActions } from '../pages/home/home';
 import { cartActions } from '../pages/cart/cart';
 import { RoutesData } from './types';
+import { product } from 'pages/product';
+import { productActions } from 'pages/product/product';
+import { getGlobalProductId } from './getGlobalProductId';
 
 const routes = [
   {
@@ -15,12 +18,21 @@ const routes = [
     actions: cartActions,
     path: '/cart',
   },
+  {
+    data: product(),
+    actions: productActions,
+    path: `/products/${getGlobalProductId()}`,
+  },
 ];
 
 const root = document.getElementById('root');
 
 export function appendPage(): void {
-  const route: RoutesData | undefined = routes.find((road) => road.path == window.location.pathname);
+  let urlPathname = window.location.pathname;
+  if (urlPathname[urlPathname.length - 1] === '/') {
+    urlPathname = urlPathname.slice(0, urlPathname.length - 1);
+  }
+  const route: RoutesData | undefined = routes.find((road) => road.path == urlPathname);
   if (root === null) {
     throw new Error();
   }
