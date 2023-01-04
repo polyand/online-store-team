@@ -9,7 +9,7 @@ export type ProductProperties = {
   title: string;
   description: string;
   price: number;
-  discountPercentage: number;
+  discount: number;
   rating: number;
   stock: number;
   type: string;
@@ -40,6 +40,7 @@ export type Filters = {
   stock: number[];
   type: string[];
   category: string[];
+  text: string;
 };
 
 export type WarningMessages = {
@@ -53,3 +54,11 @@ export type WarningMessages = {
 };
 
 export type ValidateFunction = (input: HTMLInputElement) => boolean;
+
+export type FiltredProducts = {
+  price: number[];
+  stock: number[];
+  type: string[];
+  category: string[];
+  text: string;
+};

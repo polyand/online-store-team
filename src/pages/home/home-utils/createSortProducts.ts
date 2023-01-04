@@ -1,4 +1,5 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { useSortProducts } from './useSortProducts';
 
 export function sortProducts() {
   const sortButton = getHtmlElement(document, '.sort__button');
@@ -45,6 +46,7 @@ export function sortProducts() {
         sortButton.textContent = this.innerText;
         sortButton.focus();
         sortList.classList.add('sort__list_invisible');
+        useSortProducts();
       }
     });
   });
