@@ -75,7 +75,6 @@ export function createFiltredCollection(): void {
         }
       }
     });
-    console.log(filtredProductsByKind.text);
     resultList = resultList.concat(filtredProductsByKind[key]);
   }
   createFiltredIdList(resultList);

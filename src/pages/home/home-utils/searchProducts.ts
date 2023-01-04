@@ -1,4 +1,6 @@
+import { filters, createFiltredCollection } from './filtredProducts';
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { correctionRangeValue } from './useRangeFilter';
 
 export function searchProducts() {
   const searchWrapper = getHtmlElement(document, '.search');
@@ -24,6 +26,10 @@ export function searchProducts() {
     document.addEventListener('click', (event) => {
       if (event.target === searchButton) {
         searchInput.value = '';
+        filters.text = searchInput.value;
+        createFiltredCollection();
+        correctionRangeValue('price');
+        correctionRangeValue('stock');
         searchButton.style.backgroundImage = `url('../../assets/img/logo_search.svg')`;
         searchButton.style.cursor = 'auto';
         searchInput.focus();

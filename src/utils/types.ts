@@ -9,7 +9,7 @@ export type ProductProperties = {
   title: string;
   description: string;
   price: number;
-  discountPercentage: number;
+  discount: number;
   rating: number;
   stock: number;
   type: string;

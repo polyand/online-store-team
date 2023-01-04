@@ -1,7 +1,7 @@
 import { createHtmlElement } from 'utils/createHtml';
 import { createCheckboxFilter } from './home-utils/createCheckboxFilter';
 import { createRangeFilters } from './home-utils/createRangeFilters';
-import { sortProducts } from './home-utils/sortProducts';
+import { sortProducts } from './home-utils/createSortProducts';
 import { searchProducts } from './home-utils/searchProducts';
 import { changeViewProducts } from './home-utils/changeViewProducts';
 import { createProductsList } from './home-utils/createProductsList';

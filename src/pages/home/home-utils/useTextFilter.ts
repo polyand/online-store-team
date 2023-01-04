@@ -1,5 +1,6 @@
 import { filters, createFiltredCollection } from './filtredProducts';
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { correctionRangeValue } from './useRangeFilter';
 
 export function useTextFilter(): void {
   const searchInput = getHtmlElement(document, `#search`);
@@ -10,5 +11,7 @@ export function useTextFilter(): void {
     searchInput.value = searchInput.value.toLowerCase();
     filters.text = searchInput.value;
     createFiltredCollection();
+    correctionRangeValue('price');
+    correctionRangeValue('stock');
   });
 }
