@@ -28,11 +28,7 @@ const routes = [
 const root = document.getElementById('root');
 
 export function appendPage(): void {
-  let urlPathname = window.location.pathname;
-  if (urlPathname[urlPathname.length - 1] === '/') {
-    urlPathname = urlPathname.slice(0, urlPathname.length - 1);
-  }
-  const route: RoutesData | undefined = routes.find((road) => road.path == urlPathname);
+  const route: RoutesData | undefined = routes.find((road) => road.path == window.location.pathname);
   if (root === null) {
     throw new Error();
   }
