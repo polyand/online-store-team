@@ -1,0 +1,159 @@
+@import '../../styles/variables';
+
+.product__wrapper {
+  width: 90%;
+  max-width: 1728px;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: column;
+  @include go-adaptive320-1920('gap', 35, 10);
+}
+
+.bread-crumbs {
+  width: 60%;
+  margin: 0 auto;
+  @extend %Open-Sans-700;
+  @include go-adaptive320-1920('font-size', 25, 12);
+  color: $dark-color;
+  display: flex;
+  justify-content: space-around;
+
+  .crumb {
+    cursor: pointer;
+
+    &:hover {
+      color: $semi-dark-color;
+    }
+  }
+}
+
+.product__details {
+  width: 100%;
+  border: 2px solid $dark-color;
+  border-radius: 5px;
+  background-color: $background-color;
+  display: grid;
+  grid-template:
+    [start] 'main_img main_img main_img name name' 0.3fr [row2]
+    [row2] 'main_img main_img main_img categ categ' 0.3fr [row3]
+    [row3] 'main_img main_img main_img type price' 0.3fr [row4]
+    [row4] 'main_img main_img main_img desc add_del' 0.5fr [row5]
+    [row5] 'img1 img2 img3 stock buy' 0.5fr [end] / 0.8fr 0.8fr 0.8fr 1fr 1fr;
+
+  &-thumbnail {
+    max-width: 95%;
+    max-height: 70vh;
+    align-self: center;
+    justify-self: center;
+    grid-area: main_img;
+    border: 1px solid $dark-color;
+    margin: 1% 0;
+    border-radius: 5px;
+  }
+
+  &-image1,
+  &-image2,
+  &-image3 {
+    max-width: 90%;
+    max-height: 25vh;
+    justify-self: center;
+    align-self: center;
+    border: 1px solid $dark-color;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  &-image1 {
+    grid-area: img1;
+  }
+
+  &-image2 {
+    grid-area: img2;
+  }
+
+  &-image3 {
+    grid-area: img3;
+  }
+
+  &-name {
+    grid-area: name;
+    display: flex;
+    align-items: center;
+
+    .name-text {
+      @include go-adaptive320-1920('font-size', 37, 18);
+      color: $dark-color;
+      @extend %Roboto-700;
+    }
+  }
+
+  &-category {
+    grid-area: categ;
+    @extend %product-name;
+  }
+
+  &-type {
+    grid-area: type;
+    @extend %product-name;
+  }
+
+  &-description {
+    grid-area: desc;
+    align-self: center;
+    @extend %product-name;
+    flex-direction: column;
+
+    & :first-child {
+      align-self: start;
+    }
+
+    & :last-child {
+      @include go-adaptive320-1920('font-size', 18, 10);
+      color: $dark-color;
+      @extend %Roboto-400;
+    }
+  }
+
+  &-stock {
+    grid-area: stock;
+    @extend %product-name;
+  }
+
+  &-price {
+    grid-area: price;
+    align-self: center;
+    justify-self: center;
+    @include go-adaptive320-1920('font-size', 45, 22);
+    color: $dark-color;
+    @extend %Roboto-700;
+  }
+
+  &-add-button,
+  &-remove-button {
+    grid-area: add_del;
+    align-self: center;
+    justify-self: center;
+    @extend %button-regular;
+
+    & span {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &-buy-now-button {
+    grid-area: buy;
+    align-self: center;
+    justify-self: center;
+    @extend %button-regular;
+
+    & span {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .product-hide {
+    display: none;
+  }
+}

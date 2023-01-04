@@ -196,3 +196,21 @@ $modal-back-color: #000000aa;
   -webkit-box-orient: vertical;
   box-orient: vertical;
 }
+
+%product-name {
+  display: flex;
+  align-items: center;
+
+  & :first-child {
+    @include go-adaptive320-1920('font-size', 28, 12);
+    color: $semi-dark-color;
+    @extend %Roboto-700;
+    margin: 0 5px 0 0;
+  }
+
+  & :last-child {
+    @include go-adaptive320-1920('font-size', 28, 12);
+    color: $dark-color;
+    @extend %Roboto-700;
+  }
+}
