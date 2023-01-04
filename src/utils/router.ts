@@ -3,6 +3,9 @@ import { cart } from '../pages/cart';
 import { homeActions } from '../pages/home/home';
 import { cartActions } from '../pages/cart/cart';
 import { RoutesData } from './types';
+import { product } from 'pages/product';
+import { productActions } from 'pages/product/product';
+import { getGlobalProductId } from './getGlobalProductId';
 
 const routes = [
   {
@@ -14,6 +17,11 @@ const routes = [
     data: cart(),
     actions: cartActions,
     path: '/cart',
+  },
+  {
+    data: product(),
+    actions: productActions,
+    path: `/products/${getGlobalProductId()}`,
   },
 ];
 
