@@ -1,5 +1,7 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { getInputElement } from 'utils/getInputElement';
+import { setQueries } from 'utils/queries';
+import { inCart, saveProductsInCart } from 'utils/saveCart';
 import { ValidateFunction } from 'utils/types';
 import { validateAdress } from './validate-adress';
 import { validateCardCvv } from './validate-card-cvv';
@@ -134,16 +136,18 @@ export function showMsgByClick(event: Event) {
     const header = getHtmlElement(document, '.modal__header');
     const form = getHtmlElement(document, '.modal__form');
     const completeMsg = getHtmlElement(document, '.modal-complete');
-    const modal = getHtmlElement(document, '#modal');
     header.classList.add('modal-hide');
     form.classList.add('modal-hide');
     completeMsg.classList.remove('modal-hide');
     setTimeout(() => {
+      setQueries({ name: 'modal' });
+      inCart.id = [];
+      inCart.amount = [];
+      saveProductsInCart();
       window.location.pathname = '/';
       header.classList.remove('modal-hide');
       form.classList.remove('modal-hide');
       completeMsg.classList.add('modal-hide');
-      modal.classList.add('modal-hide');
     }, 3000);
   }
 }

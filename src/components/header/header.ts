@@ -3,6 +3,8 @@ import { createHtmlElement } from 'utils/createHtml';
 import { inCart } from 'utils/saveCart';
 import { changeHeaderAmount } from './header-utils/change-header-amount';
 import { changeHeaderCost } from './header-utils/change-header-cost';
+import { jumpCartPage } from './header-utils/jump-cart-page';
+import { jumpHomePage } from './header-utils/jump-home-page';
 import headerHTML from './header.html';
 import './header.scss';
 export const header = (() => {
@@ -12,4 +14,6 @@ export const header = (() => {
 export function headerActions() {
   changeHeaderCost(inCart, promoCodes);
   changeHeaderAmount(inCart);
+  jumpHomePage();
+  jumpCartPage();
 }

@@ -10,6 +10,7 @@ import { useCheckboxFilter } from './home-utils/useCheckboxFilter';
 import { useTextFilter } from './home-utils/useTextFilter';
 import HomeHTML from './home.html';
 import './home.scss';
+import { loadProductsFromCart } from 'utils/saveCart';
 
 export const home = () => {
   return createHtmlElement(HomeHTML);
@@ -28,4 +29,5 @@ export function homeActions() {
   useTextFilter();
   useCheckboxFilter('category');
   useCheckboxFilter('type');
+  loadProductsFromCart();
 }

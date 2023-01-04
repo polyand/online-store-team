@@ -1,5 +1,6 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { getProductData } from 'utils/getProductById';
+import { productPageNavigator } from 'utils/productPageNavigator';
 import { inCart } from 'utils/saveCart';
 import { CartProducts } from 'utils/types';
 import { changeProductAmount } from './change-product-amount';
@@ -99,17 +100,25 @@ export function createProductItem(productsInCart: CartProducts) {
     // Append productItem to ul element
     elemLiArray.push(productItem);
   }
+  // Create pagination block
   const paginatedElements = pagination(elemLiArray, paginationData);
   paginatedElements.forEach((li, index) => {
     const paginatedIndex = index + getPaginatedProductId(elemLiArray, paginationData);
     const productId = inCart.id[paginatedIndex];
     const productData = getProductData(productId);
+    // Add listeners to add and del buttons
     changeProductAmount(li, productData, index, paginatedIndex);
+    const imgElem = getHtmlElement(li, '.item__image');
+    const descElem = getHtmlElement(li, '.item__text');
+
+    // Add listeners to each product to jump to product page
+    productPageNavigator(imgElem, productId);
+    productPageNavigator(descElem, productId);
     productsList.append(li);
   });
+
   pagination(elemLiArray, paginationData);
   const currentPage = getHtmlElement(document, '.products__header-current-page');
   currentPage.textContent = `${paginationData.currentPage}`;
-  console.log(paginationData);
   return productsList;
 }
