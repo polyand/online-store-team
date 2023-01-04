@@ -2,6 +2,7 @@ import { getHtmlElement } from 'utils/getHtmlElement';
 import { filters, createFiltredCollection } from './filtredProducts';
 import { containsElement, addElement, removeElement } from 'utils/helpersArray';
 import { correctionRangeValue } from './useRangeFilter';
+import { getQuery, setQueries, deleteQueries } from 'utils/queries';
 
 export function useCheckboxFilter(kind: string) {
   const checkListArea = getHtmlElement(document, `.home__filter-${kind}`);
@@ -22,9 +23,12 @@ export function useCheckboxFilter(kind: string) {
       if (event.target === checkbox) {
         if (checkbox.checked && !containsElement<string>(filters[kind], checkbox.id)) {
           addElement<string>(filters[kind], checkbox.id);
+          setQueries({ name: kind, value: checkbox.id });
         }
         if (!checkbox.checked && containsElement<string>(filters[kind], checkbox.id)) {
           removeElement<string>(filters[kind], checkbox.id);
+          console.log(getQuery( kind ));
+          deleteQueries({ name: kind, value: checkbox.id });
         }
       }
     });

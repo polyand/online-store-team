@@ -1,4 +1,5 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { setQueries, deleteQueries } from 'utils/queries';
 
 export function changeViewProducts() {
   const viewButton = getHtmlElement(document, '.home__view-button');
@@ -44,5 +45,11 @@ export function changeViewProducts() {
     productsList.classList.toggle('home__products-list_block');
     productsList.classList.toggle('home__products-list_list');
     blockItemFlag = !blockItemFlag;
+    deleteQueries({ name: 'view' });
+    if (blockItemFlag) {
+      setQueries({ name: 'view', value: 'block' });
+    } else {
+      setQueries({ name: 'view', value: 'list' });
+    }
   });
 }

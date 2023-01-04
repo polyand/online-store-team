@@ -8,6 +8,7 @@ import { createProductsList } from './home-utils/createProductsList';
 import { addDeleteProduct } from './home-utils/addDeleteProduct';
 import { useCheckboxFilter } from './home-utils/useCheckboxFilter';
 import { useTextFilter } from './home-utils/useTextFilter';
+import { resetFilters } from './home-utils/resetFilters';
 import HomeHTML from './home.html';
 import './home.scss';
 import { loadProductsFromCart } from 'utils/saveCart';
@@ -30,4 +31,5 @@ export function homeActions() {
   useCheckboxFilter('category');
   useCheckboxFilter('type');
   loadProductsFromCart();
+  resetFilters();
 }

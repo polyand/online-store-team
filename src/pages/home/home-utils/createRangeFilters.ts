@@ -1,8 +1,9 @@
 import { ProductProperties } from 'utils/types';
 import { getHtmlElement } from 'utils/getHtmlElement';
-import data from 'data/data.json';
 import { useRangeFilter, defaultUseRangeFilter } from './useRangeFilter';
 import { compareNumeric } from 'utils/helpersArray';
+import { setQueries, deleteQueries } from 'utils/queries';
+import data from 'data/data.json';
 
 export let price: number[] = [];
 export let stock: number[] = [];
@@ -90,6 +91,8 @@ function controlfromRange(
   }
   fromValue.innerHTML = `${innerValue}${unit}`;
   useRangeFilter(kind, innerValue, 'from');
+  deleteQueries({ name: kind });
+  setQueries({ name: kind, value: `${from}↕${to}` });
 }
 
 function controltoRange(
@@ -116,6 +119,8 @@ function controltoRange(
   }
   toValue.innerHTML = `${innerValue}${unit}`;
   useRangeFilter(kind, innerValue, 'to');
+  deleteQueries({ name: kind });
+  setQueries({ name: kind, value: `${from}↕${to}` });
 }
 
 export function createRangeFilters(kind: string) {

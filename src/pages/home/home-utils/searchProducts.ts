@@ -1,6 +1,7 @@
 import { filters, createFiltredCollection } from './filtredProducts';
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { correctionRangeValue } from './useRangeFilter';
+import { deleteQueries } from 'utils/queries';
 
 export function searchProducts() {
   const searchWrapper = getHtmlElement(document, '.search');
@@ -27,6 +28,7 @@ export function searchProducts() {
       if (event.target === searchButton) {
         searchInput.value = '';
         filters.text = searchInput.value;
+        deleteQueries({name: 'search'});
         createFiltredCollection();
         correctionRangeValue('price');
         correctionRangeValue('stock');

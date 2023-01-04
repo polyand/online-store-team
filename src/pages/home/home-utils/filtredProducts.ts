@@ -49,7 +49,6 @@ export function createFiltredCollection(): void {
     text: [],
   };
   let resultList: number[] = [];
-  console.log(filters);
   for (const key in filters) {
     data.products.forEach((product: ProductProperties) => {
       if (key === 'stock' || key === 'price') {
