@@ -1,11 +1,9 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { getHtmlCollection } from 'utils/getHtmlCollection';
 import { productsFiltredList } from './createProductsList';
 
 export function correctionCheckboxItemQuantity(kind: string): void {
-  const checkboxList = document.querySelectorAll(`.home__filter-${kind} .filter-checkbox__item`);
-  if (!checkboxList) {
-    throw new Error('Must be an HTMLElement!');
-  }
+  const checkboxList = getHtmlCollection(document, `.home__filter-${kind} .filter-checkbox__item`);
 
   checkboxList.forEach((checkbox) => {
     let counter = 0;

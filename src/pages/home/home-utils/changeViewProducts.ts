@@ -1,4 +1,5 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { getHtmlCollection } from 'utils/getHtmlCollection';
 import { setQueries, deleteQueries } from 'utils/queries';
 
 export let blockItemFlag: boolean;
@@ -7,18 +8,9 @@ export function changeView(): void {
   const viewButton = getHtmlElement(document, '.home__view-button');
   const home = getHtmlElement(document, '.home');
   const productsList = getHtmlElement(document, '.home__products-list');
-  const productItem = document.querySelectorAll('.home__product-item');
+  const productItem = getHtmlCollection(document, '.home__product-item');
   const filters = getHtmlElement(document, '.home__filters');
   const buttons = getHtmlElement(document, '.home__buttons');
-
-  if (!productItem) {
-    throw new Error('Must be an HTMLElement!');
-  }
-  productItem.forEach((listItem: Element) => {
-    if (!(listItem instanceof HTMLDivElement)) {
-      throw new Error('Must be an HTMLElement!');
-    }
-  });
   productItem.forEach((item: Element) => {
     const productsItemImg = getHtmlElement(item, '.product-item__img');
     const listInfo = getHtmlElement(item, '.list-info');
@@ -39,7 +31,6 @@ export function changeView(): void {
   viewButton.classList.toggle('home__view-button_list');
   productsList.classList.toggle('home__products-list_block');
   productsList.classList.toggle('home__products-list_list');
-
   blockItemFlag = !blockItemFlag;
 }
 

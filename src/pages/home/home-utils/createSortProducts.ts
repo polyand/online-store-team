@@ -1,20 +1,12 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { getHtmlCollection } from 'utils/getHtmlCollection';
 import { useSortProducts } from './useSortProducts';
 import { setQueries, deleteQueries } from 'utils/queries';
 
 export function sortProducts(): void {
   const sortButton = getHtmlElement(document, '.sort__button');
   const sortList = getHtmlElement(document, '.sort__list');
-  const sortItems = document.querySelectorAll('.sort__item');
-
-  if (!sortItems) {
-    throw new Error('Must be an HTMLElement!');
-  }
-  sortItems.forEach((listItem: Element) => {
-    if (!(listItem instanceof HTMLElement)) {
-      throw new Error('Must be an HTMLElement!');
-    }
-  });
+  const sortItems = getHtmlCollection(document, '.sort__item');
 
   // Click button. Open/Close select menu
   sortButton.addEventListener('click', () => {

@@ -1,13 +1,7 @@
+import { getHtmlCollection } from 'utils/getHtmlCollection';
+
 export function jumpProductPage(): void {
-  const productItems = document.querySelectorAll('.home__product-item');
-  if (!productItems) {
-    throw new Error('Must be an HTMLElement!');
-  }
-  productItems.forEach((productItem: Element) => {
-    if (!(productItem instanceof HTMLElement)) {
-      throw new Error('Must be an HTMLElement!');
-    }
-  });
+  const productItems = getHtmlCollection(document, '.home__product-item');
   productItems.forEach((productItem: Element) => {
     productItem.addEventListener('click', function (this: HTMLElement, event) {
       if (

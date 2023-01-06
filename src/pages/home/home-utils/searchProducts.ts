@@ -1,15 +1,13 @@
 import { filters, createFiltredCollection } from './filtredProducts';
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { getInputElement } from 'utils/getInputElement';
 import { correctionRangeValue } from './useRangeFilter';
 import { deleteQueries } from 'utils/queries';
 
 export function searchProducts() {
   const searchWrapper = getHtmlElement(document, '.search');
   const searchButton = getHtmlElement(document, '.search__button');
-  const searchInput = getHtmlElement(document, '.search__input');
-  if (!(searchInput instanceof HTMLInputElement)) {
-    throw new Error('Must be an HTMLInputElement!');
-  }
+  const searchInput = getInputElement(document, '.search__input');
 
   // Focus. Increase field input
   searchInput.addEventListener('focus', () => {
