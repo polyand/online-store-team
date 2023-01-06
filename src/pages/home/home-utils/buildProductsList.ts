@@ -1,6 +1,8 @@
 import { productsFiltredList } from './createProductsList';
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { correctionCheckboxItemQuantity } from './correctionCheckboxItemQuantity';
+import { addDeleteProduct } from './addDeleteProduct';
+import { jumpProductPage } from './jumpProductPage';
 
 export function buildProductsList() {
   const productsList = getHtmlElement(document, '.home__products-list');
@@ -148,4 +150,6 @@ export function buildProductsList() {
   });
   correctionCheckboxItemQuantity('category');
   correctionCheckboxItemQuantity('type');
+  addDeleteProduct();
+  jumpProductPage();
 }
