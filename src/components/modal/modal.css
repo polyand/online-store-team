@@ -1,17 +1,18 @@
-.modal__form .credit-card__header, .modal__header {
-  font-family: "Open Sans";
+.modal__form .credit-card__header,
+.modal__header {
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
 }
 
 .modal-complete {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
 }
 
 .modal__form-submit {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
 }
@@ -86,7 +87,7 @@
   border-radius: 5px;
   background: linear-gradient(90deg, #70908b, #07484a);
   display: grid;
-  grid-template: [start] "imag number number number number number number number" 1fr [row2] [row2] "label_date label_date date date label_cvv label_cvv cvv cvv" 1fr [end]/1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template: [start] 'imag number number number number number number number' 1fr [row2] [row2] 'label_date label_date date date label_cvv label_cvv cvv cvv' 1fr [end]/1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 5%;
 }
 .modal__form .credit-card__body-image {
@@ -94,7 +95,9 @@
   width: 100%;
   align-self: center;
 }
-.modal__form .credit-card__body-number, .modal__form .credit-card__body-date, .modal__form .credit-card__body-cvv {
+.modal__form .credit-card__body-number,
+.modal__form .credit-card__body-date,
+.modal__form .credit-card__body-cvv {
   max-height: 30px;
   font-size: 24px;
   align-self: center;
@@ -105,22 +108,32 @@
   color: #fff7ee;
 }
 @media (max-width: 1920px) {
-  .modal__form .credit-card__body-number, .modal__form .credit-card__body-date, .modal__form .credit-card__body-cvv {
+  .modal__form .credit-card__body-number,
+  .modal__form .credit-card__body-date,
+  .modal__form .credit-card__body-cvv {
     max-height: calc(15px + 15 * ((100vw - 320px) / (1920 - 320)));
   }
 }
 @media (max-width: 1920px) {
-  .modal__form .credit-card__body-number, .modal__form .credit-card__body-date, .modal__form .credit-card__body-cvv {
+  .modal__form .credit-card__body-number,
+  .modal__form .credit-card__body-date,
+  .modal__form .credit-card__body-cvv {
     font-size: calc(8px + 16 * ((100vw - 320px) / (1920 - 320)));
   }
 }
-.modal__form .credit-card__body-number::-moz-placeholder, .modal__form .credit-card__body-date::-moz-placeholder, .modal__form .credit-card__body-cvv::-moz-placeholder {
+.modal__form .credit-card__body-number::-moz-placeholder,
+.modal__form .credit-card__body-date::-moz-placeholder,
+.modal__form .credit-card__body-cvv::-moz-placeholder {
   color: #fff7ee;
 }
-.modal__form .credit-card__body-number:-ms-input-placeholder, .modal__form .credit-card__body-date:-ms-input-placeholder, .modal__form .credit-card__body-cvv:-ms-input-placeholder {
+.modal__form .credit-card__body-number:-ms-input-placeholder,
+.modal__form .credit-card__body-date:-ms-input-placeholder,
+.modal__form .credit-card__body-cvv:-ms-input-placeholder {
   color: #fff7ee;
 }
-.modal__form .credit-card__body-number::placeholder, .modal__form .credit-card__body-date::placeholder, .modal__form .credit-card__body-cvv::placeholder {
+.modal__form .credit-card__body-number::placeholder,
+.modal__form .credit-card__body-date::placeholder,
+.modal__form .credit-card__body-cvv::placeholder {
   color: #fff7ee;
 }
 .modal__form .credit-card__body-number {
@@ -154,7 +167,11 @@
 .modal__form .credit-card__body-cvv {
   grid-area: cvv;
 }
-.modal__form-validity-card div, .modal__form-validity-name div, .modal__form-validity-tel div, .modal__form-validity-adress div, .modal__form-validity-email div {
+.modal__form-validity-card div,
+.modal__form-validity-name div,
+.modal__form-validity-tel div,
+.modal__form-validity-adress div,
+.modal__form-validity-email div {
   margin: 2% auto 0;
   padding: 0 3%;
   text-align: center;
@@ -163,7 +180,11 @@
   font-weight: 700;
 }
 @media (max-width: 1920px) {
-  .modal__form-validity-card div, .modal__form-validity-name div, .modal__form-validity-tel div, .modal__form-validity-adress div, .modal__form-validity-email div {
+  .modal__form-validity-card div,
+  .modal__form-validity-name div,
+  .modal__form-validity-tel div,
+  .modal__form-validity-adress div,
+  .modal__form-validity-email div {
     font-size: calc(10px + 13 * ((100vw - 320px) / (1920 - 320)));
   }
 }
@@ -205,4 +226,4 @@
   .modal-complete {
     font-size: calc(14px + 21 * ((100vw - 320px) / (1920 - 320)));
   }
-}/*# sourceMappingURL=modal.css.map */
+} /*# sourceMappingURL=modal.css.map */
