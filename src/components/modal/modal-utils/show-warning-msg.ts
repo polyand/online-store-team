@@ -1,6 +1,6 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { getInputElement } from 'utils/getInputElement';
-import { setQueries } from 'utils/queries';
+import { setQueriesModal } from 'utils/queriesModal';
 import { inCart, saveProductsInCart } from 'utils/saveCart';
 import { ValidateFunction } from 'utils/types';
 import { validateAdress } from './validate-adress';
@@ -140,7 +140,7 @@ export function showMsgByClick(event: Event) {
     form.classList.add('modal-hide');
     completeMsg.classList.remove('modal-hide');
     setTimeout(() => {
-      setQueries({ name: 'modal' });
+      setQueriesModal({ name: 'modal' });
       inCart.id = [];
       inCart.amount = [];
       saveProductsInCart();

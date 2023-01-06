@@ -1,5 +1,5 @@
-import { setQueries } from 'utils/queries';
+import { setQueriesModal } from 'utils/queriesModal';
 
 export function setModalQuery(): void {
-  setQueries({ name: 'modal', value: 'true' });
+  setQueriesModal({ name: 'modal', value: 'true' });
 }
