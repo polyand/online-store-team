@@ -1,8 +1,10 @@
 import { ProductProperties } from 'utils/types';
 import { getHtmlElement } from 'utils/getHtmlElement';
-import data from 'data/data.json';
+import { getInputElement } from 'utils/getInputElement';
 import { useRangeFilter, defaultUseRangeFilter } from './useRangeFilter';
 import { compareNumeric } from 'utils/helpersArray';
+import { setQueries, deleteQueries } from 'utils/queries';
+import data from 'data/data.json';
 
 export let price: number[] = [];
 export let stock: number[] = [];
@@ -69,7 +71,7 @@ export function setToggleAccessible(currentTarget: HTMLElement, kind: string): v
   }
 }
 
-function controlfromRange(
+export function controlfromRange(
   fromRange: HTMLElement,
   toRange: HTMLElement,
   sliderColor: string,
@@ -92,7 +94,7 @@ function controlfromRange(
   useRangeFilter(kind, innerValue, 'from');
 }
 
-function controltoRange(
+export function controltoRange(
   fromRange: HTMLElement,
   toRange: HTMLElement,
   sliderColor: string,
@@ -118,18 +120,12 @@ function controltoRange(
   useRangeFilter(kind, innerValue, 'to');
 }
 
-export function createRangeFilters(kind: string) {
+export function createRangeFilters(kind: string): void {
   const [unit, value, color] = kind === 'price' ? ['$', price, '#e0eff6'] : ['', stock, '#fff4e7'];
-
-  const fromRange = getHtmlElement(document, `#from${kind[0].toUpperCase() + kind.slice(1)}`);
-  if (!(fromRange instanceof HTMLInputElement)) {
-    throw new Error('Must be an HTMLInputElement!');
-  }
-
-  const toRange = getHtmlElement(document, `#to${kind[0].toUpperCase() + kind.slice(1)}`);
-  if (!(toRange instanceof HTMLInputElement)) {
-    throw new Error('Must be an HTMLInputElement!');
-  }
+  const fromRange = getInputElement(document, `#from${kind[0].toUpperCase() + kind.slice(1)}`);
+  const toRange = getInputElement(document, `#to${kind[0].toUpperCase() + kind.slice(1)}`);
+  const fromRangeValue = getHtmlElement(document, `.home__filter-${kind} .filter-range__from-value`);
+  const toRangeValue = getHtmlElement(document, `.home__filter-${kind} .filter-range__to-value`);
 
   fromRange.min = `${value[0]}`;
   fromRange.max = `${value[1]}`;
@@ -139,9 +135,6 @@ export function createRangeFilters(kind: string) {
   toRange.max = `${value[1]}`;
   toRange.value = `${value[1]}`;
 
-  const fromRangeValue = getHtmlElement(document, `.home__filter-${kind} .filter-range__from-value`);
-  const toRangeValue = getHtmlElement(document, `.home__filter-${kind} .filter-range__to-value`);
-
   fromRangeValue.innerHTML = `${value[0] + unit}`;
   toRangeValue.innerHTML = `${value[1] + unit}`;
 
@@ -149,6 +142,17 @@ export function createRangeFilters(kind: string) {
   fillSlider(fromRange, toRange, color, '#07484a', toRange);
   setToggleAccessible(toRange, kind);
 
-  fromRange.oninput = () => controlfromRange(fromRange, toRange, color, fromRangeValue, kind, unit);
-  toRange.oninput = () => controltoRange(fromRange, toRange, color, toRangeValue, kind, unit);
+  fromRange.oninput = () => {
+    controlfromRange(fromRange, toRange, color, fromRangeValue, kind, unit);
+    const [from, to]: number[] = getParsed(fromRange, toRange);
+    deleteQueries({ name: kind });
+    setQueries({ name: kind, value: `${from}↕${to}` });
+  };
+
+  toRange.oninput = () => {
+    controltoRange(fromRange, toRange, color, toRangeValue, kind, unit);
+    const [from, to]: number[] = getParsed(fromRange, toRange);
+    deleteQueries({ name: kind });
+    setQueries({ name: kind, value: `${from}↕${to}` });
+  };
 }

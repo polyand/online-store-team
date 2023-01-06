@@ -11,7 +11,7 @@ export const filters: Filters = {
   stock: [],
   type: [],
   category: [],
-  text: '',
+  text: [''],
 };
 
 function createFiltredIdList(list: number[]): void {
@@ -49,7 +49,7 @@ export function createFiltredCollection(): void {
     text: [],
   };
   let resultList: number[] = [];
-  console.log(filters);
+
   for (const key in filters) {
     data.products.forEach((product: ProductProperties) => {
       if (key === 'stock' || key === 'price') {
