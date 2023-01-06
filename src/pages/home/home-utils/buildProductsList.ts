@@ -1,8 +1,9 @@
 import { productsFiltredList } from './createProductsList';
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { correctionCheckboxItemQuantity } from './correctionCheckboxItemQuantity';
-import { addDeleteProduct } from './addDeleteProduct';
+import { addRemoveProduct } from './addRemoveProduct';
 import { jumpProductPage } from './jumpProductPage';
+import { inCart } from 'utils/saveCart';
 
 export function buildProductsList() {
   const productsList = getHtmlElement(document, '.home__products-list');
@@ -132,10 +133,19 @@ export function buildProductsList() {
     ratingStars.classList.add('product-footer-info__rating-stars');
     ratingStars.style.setProperty('--rating', `${product.rating}`);
 
+    let statusProduct = 'add';
+    let buttonLable = 'Add to cart';
+    inCart.id.forEach((idInCart) => {
+      if (idInCart === product.id) {
+        statusProduct = 'remove';
+        buttonLable = 'Remove from cart';
+      }
+    });
+
     const btnBuyNow = document.createElement('button');
-    btnBuyNow.classList.add('product-footer-info__btn-buy', 'product-footer-info__btn-buy_add');
+    btnBuyNow.classList.add('product-footer-info__btn-buy', `product-footer-info__btn-buy_${statusProduct}`);
     btnBuyNow.id = `btn_${product.id}`;
-    btnBuyNow.innerHTML = 'Add to cart';
+    btnBuyNow.innerHTML = buttonLable;
 
     footerInfo.append(ratingTitle);
     footerInfo.append(ratingStars);
@@ -150,6 +160,6 @@ export function buildProductsList() {
   });
   correctionCheckboxItemQuantity('category');
   correctionCheckboxItemQuantity('type');
-  addDeleteProduct();
+  addRemoveProduct();
   jumpProductPage();
 }
