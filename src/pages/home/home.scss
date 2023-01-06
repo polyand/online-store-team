@@ -31,6 +31,12 @@
       .home__btn-link {
         @include button;
       }
+
+      .home__btn-link_copied,
+      .home__btn-link_copied:hover {
+        background-color: $btn-link-color;
+        color: $dark-color;
+      }
     }
 
     .home__buttons_list {

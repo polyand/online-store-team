@@ -2,7 +2,7 @@ import { getHtmlElement } from 'utils/getHtmlElement';
 import { useSortProducts } from './useSortProducts';
 import { setQueries, deleteQueries } from 'utils/queries';
 
-export function sortProducts() {
+export function sortProducts(): void {
   const sortButton = getHtmlElement(document, '.sort__button');
   const sortList = getHtmlElement(document, '.sort__list');
   const sortItems = document.querySelectorAll('.sort__item');
@@ -49,7 +49,7 @@ export function sortProducts() {
         sortList.classList.add('sort__list_invisible');
         useSortProducts();
         deleteQueries({ name: 'sort' });
-        setQueries ({ name: 'sort', value: this.innerText })
+        setQueries({ name: 'sort', value: this.innerText });
       }
     });
   });

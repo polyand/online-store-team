@@ -27,8 +27,8 @@ export function searchProducts() {
     document.addEventListener('click', (event) => {
       if (event.target === searchButton) {
         searchInput.value = '';
-        filters.text = searchInput.value;
-        deleteQueries({name: 'search'});
+        filters.text = [searchInput.value];
+        deleteQueries({ name: 'search' });
         createFiltredCollection();
         correctionRangeValue('price');
         correctionRangeValue('stock');

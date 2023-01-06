@@ -1,4 +1,4 @@
-import { containsElement, addElement, removeElement } from './helpersArray';
+import { containsElement, removeElement } from './helpersArray';
 
 export const getQuery = (name: string): string | null => {
   const url = new URL(window.location.href);
@@ -52,7 +52,7 @@ export const deleteAllQueries = (): void => {
     // url.search = ''; // bad because not show in history
     // window.history.pushState(null, '', url);
     window.history.pushState(null, '', url.origin);
-    window.dispatchEvent(new Event('popstate'));
+    // window.dispatchEvent(new Event('popstate'));
   }
 };
 

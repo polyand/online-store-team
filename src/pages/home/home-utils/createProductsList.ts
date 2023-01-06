@@ -4,6 +4,8 @@ import { filtredIdList } from './filtredProducts';
 import { useSortProducts } from './useSortProducts';
 import { checkUseFilters } from './checkUseFilters';
 import { correctionCheckboxItemQuantity } from './correctionCheckboxItemQuantity';
+import { addDeleteProduct } from './addDeleteProduct';
+
 import data from 'data/data.json';
 
 const products: ProductProperties[] = data.products;
@@ -75,4 +77,5 @@ export function createProductsList() {
   });
   productsSearchStat.innerHTML = `Found: ${productsFiltredList.length}`;
   useSortProducts();
+  addDeleteProduct();
 }

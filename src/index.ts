@@ -3,25 +3,21 @@ import { addElement } from 'utils/addElement';
 import { header } from 'components/header';
 import { footer } from 'components/footer';
 import { headerActions } from 'components/header/header';
-// import { homeActions } from 'pages/home/home';
-// import { cartActions } from 'pages/cart/cart';
-import './index.scss';
 import { modal } from 'components/modal';
 import { modalActions } from 'components/modal/modal';
 import { toggleModal } from 'components/modal/modal-utils/toggle-modal';
-
-function onLoadFunctions() {
+import { queriesHome } from 'pages/home/home-utils/queriesHome';
+import './index.scss';
+export function onLoadFunctions(): void {
   appendPage();
   headerActions();
   modalActions();
-  toggleModal();
-  // cartActions();
-  // homeActions();
+  queriesHome();
 }
 
-function onPopstateFunctions() {
-  appendPage();
+function onPopstateFunctions(): void {
   toggleModal();
+  queriesHome();
 }
 
 //window.addEventListener('click', router);

@@ -40,7 +40,7 @@ export type Filters = {
   stock: number[];
   type: string[];
   category: string[];
-  text: string;
+  text: string[];
 };
 
 export type WarningMessages = {

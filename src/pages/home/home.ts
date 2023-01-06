@@ -5,19 +5,19 @@ import { sortProducts } from './home-utils/createSortProducts';
 import { searchProducts } from './home-utils/searchProducts';
 import { changeViewProducts } from './home-utils/changeViewProducts';
 import { createProductsList } from './home-utils/createProductsList';
-import { addDeleteProduct } from './home-utils/addDeleteProduct';
 import { useCheckboxFilter } from './home-utils/useCheckboxFilter';
 import { useTextFilter } from './home-utils/useTextFilter';
 import { resetFilters } from './home-utils/resetFilters';
+import { copyLink } from './home-utils/copyLink';
+import { loadProductsFromCart } from 'utils/saveCart';
 import HomeHTML from './home.html';
 import './home.scss';
-import { loadProductsFromCart } from 'utils/saveCart';
 
 export const home = () => {
   return createHtmlElement(HomeHTML);
 };
 
-export function homeActions() {
+export function homeActions(): void {
   createCheckboxFilter('category');
   createCheckboxFilter('type');
   createRangeFilters('price');
@@ -26,10 +26,10 @@ export function homeActions() {
   searchProducts();
   changeViewProducts();
   createProductsList();
-  addDeleteProduct();
   useTextFilter();
   useCheckboxFilter('category');
   useCheckboxFilter('type');
   loadProductsFromCart();
   resetFilters();
+  copyLink();
 }
