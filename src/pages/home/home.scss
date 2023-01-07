@@ -94,11 +94,39 @@
           }
 
           .filter-checkbox__input {
+            display: none;
+          }
+
+          .filter-checkbox__input + .filter-checkbox__lebel {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            cursor: pointer;
+            &:before {
+              content: '\2714';
+              color: transparent;
+              display: inline-block;
+              border: 1px solid $dark-color;
+              border-radius: 3px;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 15px;
+              margin: -2px 5px 0 0;
+              height: 15px;
+              width: 15px;
+              text-align: center;
+              vertical-align: middle;
+              transition: color ease 0.3s;
+            }
+          }
+
+          .filter-checkbox__input:checked + .filter-checkbox__lebel::before {
+            color: $dark-color;
           }
 
           .filter-checkbox__lebel {
             flex-grow: 1;
-            margin: 0 10px;
+            margin: 0;
           }
 
           .filter-checkbox__quantity {
@@ -112,6 +140,12 @@
 
         .filter-checkbox__item_filtred {
           color: $semi-dark-color;
+
+          .filter-checkbox__input + .filter-checkbox__lebel {
+            &::before {
+              border-color: $semi-dark-color;
+            }
+          }
         }
       }
     }

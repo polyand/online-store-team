@@ -24,6 +24,7 @@ export function createCheckboxFilter(kind: string) {
     input.classList.add('filter-checkbox__input');
     const label = document.createElement('label');
     label.classList.add('filter-checkbox__lebel');
+    label.htmlFor = key;
     label.textContent = key;
     const div = document.createElement('div');
     div.classList.add('filter-checkbox__quantity', 'product-quantity');
