@@ -1,5 +1,4 @@
 import { getProductData } from '../src/utils/getProductById';
-import productsData from '../src/data/data.json';
 
 const productDataObj = {
   id: 1,

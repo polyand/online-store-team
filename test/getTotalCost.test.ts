@@ -1,4 +1,4 @@
-import { describe, it, expect, jest, afterAll } from '@jest/globals';
+import { describe, it, expect, jest } from '@jest/globals';
 import { getProductData } from '../src/utils/getProductById';
 import { getTotalCost } from '../src/utils/getTotalCost';
 
