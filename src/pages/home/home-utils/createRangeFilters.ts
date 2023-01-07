@@ -3,7 +3,7 @@ import { getHtmlElement } from 'utils/getHtmlElement';
 import { getInputElement } from 'utils/getInputElement';
 import { useRangeFilter, defaultUseRangeFilter } from './useRangeFilter';
 import { compareNumeric } from 'utils/helpersArray';
-import { setQueries, deleteQueries } from 'utils/queries';
+import { setQueries } from 'utils/queries';
 import data from 'data/data.json';
 
 export let price: number[] = [];
@@ -145,14 +145,12 @@ export function createRangeFilters(kind: string): void {
   fromRange.oninput = () => {
     controlfromRange(fromRange, toRange, color, fromRangeValue, kind, unit);
     const [from, to]: number[] = getParsed(fromRange, toRange);
-    deleteQueries({ name: kind });
     setQueries({ name: kind, value: `${from}↕${to}` });
   };
 
   toRange.oninput = () => {
     controltoRange(fromRange, toRange, color, toRangeValue, kind, unit);
     const [from, to]: number[] = getParsed(fromRange, toRange);
-    deleteQueries({ name: kind });
     setQueries({ name: kind, value: `${from}↕${to}` });
   };
 }

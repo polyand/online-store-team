@@ -1,6 +1,6 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { getHtmlCollection } from 'utils/getHtmlCollection';
-import { setQueries, deleteQueries } from 'utils/queries';
+import { setQueries } from 'utils/queries';
 
 export let blockItemFlag: boolean;
 
@@ -41,7 +41,6 @@ export function changeViewProducts(): void {
   // Click. Change button view
   viewButton.addEventListener('click', () => {
     changeView();
-    deleteQueries({ name: 'view' });
     if (blockItemFlag) {
       setQueries({ name: 'view', value: 'block' });
     } else {
