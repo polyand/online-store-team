@@ -80,7 +80,7 @@
       "discount": 12,
       "rating": 3.1,
       "stock": 32,
-      "type": "Chest of Drawers",
+      "type": "Chest of Drawer",
       "category": "Bedroom",
       "thumbnail": "data/assets/bedroom/chest of drawers/bjerringbro/thumbnail.jpg",
       "images": [
@@ -295,7 +295,7 @@
       "discount": 22,
       "rating": 4.1,
       "stock": 78,
-      "type": "Bkcases/Room divider",
+      "type": "Bkcase/Room divider",
       "category": "Storage",
       "thumbnail": "data/assets/storage/divider/trappedal/thumbnail.jpg",
       "images": [
@@ -358,9 +358,189 @@
         "data/assets/storage/wardrobe/fredensborg/3.jpg",
         "data/assets/storage/wardrobe/fredensborg/thumbnail.jpg"
       ]
+    },
+    {
+      "id": 21,
+      "title": "BROBY",
+      "description": "Bamboo and MDF. W70 x H150 x D37 cm.",
+      "price": 65,
+      "discount": 13,
+      "rating": 3.4,
+      "stock": 93,
+      "type": "Shelving",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/shelving/broby/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/shelving/broby/1.jpg",
+        "data/assets/storage/shelving/broby/2.jpg",
+        "data/assets/storage/shelving/broby/3.jpg",
+        "data/assets/storage/shelving/broby/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "HORSENS",
+      "description": "Shelves oak. W70 x H197 x D29 cm.",
+      "price": 68,
+      "discount": 7,
+      "rating": 2.5,
+      "stock": 62,
+      "type": "Shelving",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/shelving/horsens/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/shelving/horsens/1.jpg",
+        "data/assets/storage/shelving/horsens/2.jpg",
+        "data/assets/storage/shelving/horsens/3.jpg",
+        "data/assets/storage/shelving/horsens/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "SKALS",
+      "description": "Deco veneer and tempered glass. W71 x H71/81 x D35 cm.",
+      "price": 80,
+      "discount": 9,
+      "rating": 2.9,
+      "stock": 32,
+      "type": "Cabinet",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/cabinet/skals/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/cabinet/skals/1.jpg",
+        "data/assets/storage/cabinet/skals/2.jpg",
+        "data/assets/storage/cabinet/skals/3.jpg",
+        "data/assets/storage/cabinet/skals/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "HALDAGER",
+      "description": "Deco veneer and tempered glass. W71 x H71/81 x D35 cm.",
+      "price": 87,
+      "discount": 15,
+      "rating": 3.7,
+      "stock": 11,
+      "type": "Cabinet",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/cabinet/haldager/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/cabinet/haldager/1.jpg",
+        "data/assets/storage/cabinet/haldager/2.jpg",
+        "data/assets/storage/cabinet/haldager/3.jpg",
+        "data/assets/storage/cabinet/haldager/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 25,
+      "title": "REFLECT",
+      "description": "Deco veneer. W71 x H71/81 x D35 cm.",
+      "price": 105,
+      "discount": 10,
+      "rating": 2.1,
+      "stock": 29,
+      "type": "Cabinet",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/cabinet/reflect/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/cabinet/reflect/1.jpg",
+        "data/assets/storage/cabinet/reflect/2.jpg",
+        "data/assets/storage/cabinet/reflect/3.jpg",
+        "data/assets/storage/cabinet/reflect/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "JANNERUP",
+      "description": "Deco veneer. 8 shelves. W120 x H151 x D35 cm.",
+      "price": 105,
+      "discount": 10,
+      "rating": 2.1,
+      "stock": 29,
+      "type": "Shelving",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/shelving/jannerup/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/shelving/jannerup/1.jpg",
+        "data/assets/storage/shelving/jannerup/2.jpg",
+        "data/assets/storage/shelving/jannerup/3.jpg",
+        "data/assets/storage/shelving/jannerup/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 27,
+      "title": "VANDBORG",
+      "description": "Deco veneer and metal. With 4 shelves + 2 sliding doors. W80 x H163 x D40 cm.",
+      "price": 145,
+      "discount": 12,
+      "rating": 4.1,
+      "stock": 93,
+      "type": "Shelving",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/shelving/vandborg/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/shelving/vandborg/1.jpg",
+        "data/assets/storage/shelving/vandborg/2.jpg",
+        "data/assets/storage/shelving/vandborg/3.jpg",
+        "data/assets/storage/shelving/vandborg/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 28,
+      "title": "AABENRAA",
+      "description": "Deco veneer and steel. W90 x L160 x H75 cm.",
+      "price": 320,
+      "discount": 10,
+      "rating": 3.8,
+      "stock": 43,
+      "type": "Table",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/tables/aabenraa/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/tables/aabenraa/1.jpg",
+        "data/assets/dining room/tables/aabenraa/2.jpg",
+        "data/assets/dining room/tables/aabenraa/3.jpg",
+        "data/assets/dining room/tables/aabenraa/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "GADESKOV",
+      "description": "Solid oak and oak veneer. W90 x L200 x H75 cm.",
+      "price": 210,
+      "discount": 5,
+      "rating": 3.5,
+      "stock": 67,
+      "type": "Table",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/tables/gadeskov/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/tables/gadeskov/1.jpg",
+        "data/assets/dining room/tables/gadeskov/2.jpg",
+        "data/assets/dining room/tables/gadeskov/3.jpg",
+        "data/assets/dining room/tables/gadeskov/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 30,
+      "title": "PURHUS",
+      "description": "Dining chair. Fabric and steel.",
+      "price": 82,
+      "discount": 20,
+      "rating": 4.0,
+      "stock": 25,
+      "type": "Chair",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/chairs/purhus/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/chairs/purhus/1.jpg",
+        "data/assets/dining room/chairs/purhus/2.jpg",
+        "data/assets/dining room/chairs/purhus/3.jpg",
+        "data/assets/dining room/chairs/purhus/thumbnail.jpg"
+      ]
     }
   ],
-  "total": 20,
+  "total": 30,
   "skip": 0,
-  "limit": 20
+  "limit": 30
 }
