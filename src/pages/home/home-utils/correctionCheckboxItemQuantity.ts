@@ -2,7 +2,7 @@ import { getHtmlElement } from 'utils/getHtmlElement';
 import { getHtmlCollection } from 'utils/getHtmlCollection';
 import { productsFiltredList } from './createProductsList';
 
-export function correctionCheckboxItemQuantity(kind: string): void {
+export function correctionCheckboxItemQuantity(kind: 'category' | 'type'): void {
   const checkboxList = getHtmlCollection(document, `.home__filter-${kind} .filter-checkbox__item`);
 
   checkboxList.forEach((checkbox) => {
