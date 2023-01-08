@@ -8,7 +8,7 @@ import { correctionRangeValue } from './useRangeFilter';
 
 export function setFilters(queryParams: { [key: string]: string | string[] }): void {
   for (const key in queryParams) {
-    if (key in filters) {
+    if (key in filters ) {
       filters[key].length = 0;
     }
     if (key === 'category' || key === 'type') {

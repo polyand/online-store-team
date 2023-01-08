@@ -2,7 +2,7 @@ import { getHtmlElement } from 'utils/getHtmlElement';
 import { getInputElement } from 'utils/getInputElement';
 import { price, stock, controlfromRange, controltoRange } from './createRangeFilters';
 
-export function setRangeFilters(kind: string, queryParams: string[] | string): void {
+export function setRangeFilters(kind: ('price' | 'stock'), queryParams: string[] | string): void {
   const [unit, value, color] = kind === 'price' ? ['$', price, '#e0eff6'] : ['', stock, '#fff4e7'];
   const fromRange = getInputElement(document, `#from${kind[0].toUpperCase() + kind.slice(1)}`);
   const toRange = getInputElement(document, `#to${kind[0].toUpperCase() + kind.slice(1)}`);

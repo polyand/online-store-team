@@ -4,7 +4,7 @@ import { productsFiltredList } from './createProductsList';
 import { compareNumeric } from 'utils/helpersArray';
 import { fillSlider, setToggleAccessible } from './createRangeFilters';
 
-export function useRangeFilter(kind: keyof typeof filters, value: number, flag: string): void {
+export function useRangeFilter(kind: ('price' | 'stock'), value: number, flag: string): void {
   if (flag === 'from') {
     filters[kind][0] = value;
   }
@@ -14,7 +14,7 @@ export function useRangeFilter(kind: keyof typeof filters, value: number, flag: 
   createFiltredCollection();
 }
 
-export function defaultUseRangeFilter(kind: keyof typeof filters, from: number, to: number): void {
+export function defaultUseRangeFilter(kind: ('price' | 'stock'), from: number, to: number): void {
   filters[kind][0] = from;
   filters[kind][1] = to;
 }
