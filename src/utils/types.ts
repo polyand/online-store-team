@@ -44,13 +44,7 @@ export type Filters = {
 };
 
 export type WarningMessages = {
-  name: string;
-  tel: string;
-  adress: string;
-  email: string;
-  cardNum: string;
-  cardDate: string;
-  cardCvv: string;
+  [key: string]: string;
 };
 
 export type ValidateFunction = (input: HTMLInputElement) => boolean;
@@ -61,4 +55,8 @@ export type FiltredProducts = {
   type: string[];
   category: string[];
   text: string;
+};
+
+export type ValidProperties = {
+  [key: string]: boolean;
 };

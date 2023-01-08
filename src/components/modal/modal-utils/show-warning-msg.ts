@@ -2,7 +2,7 @@ import { getHtmlElement } from 'utils/getHtmlElement';
 import { getInputElement } from 'utils/getInputElement';
 import { setQueriesModal } from 'utils/queriesModal';
 import { inCart, saveProductsInCart } from 'utils/saveCart';
-import { ValidateFunction } from 'utils/types';
+import { ValidateFunction, ValidProperties } from 'utils/types';
 import { validateAdress } from './validate-adress';
 import { validateCardCvv } from './validate-card-cvv';
 import { validateCardDate } from './validate-card-date';
@@ -12,7 +12,7 @@ import { validateName } from './validate-name';
 import { validateTel } from './validate-tel';
 import { warningMsg } from './warning-texts';
 
-const isValid = {
+const isValid: ValidProperties = {
   name: false,
   tel: false,
   adress: false,
@@ -65,7 +65,7 @@ function getCardWarnMsg(input: HTMLInputElement, id: string, func: ValidateFunct
 function changeCardImage(input: HTMLInputElement): void {
   const firstNum = input.value[0];
   const cardImage = getHtmlElement(document, '.credit-card__body-image');
-  const urls = {
+  const urls: { [key: string]: string } = {
     3: '../../assets/img/ae-logo.png',
     4: '../../assets/img/v-logo.png',
     5: '../../assets/img/mc-logo.png',
