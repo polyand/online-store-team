@@ -1,7 +1,7 @@
 import { filters } from './filtredProducts';
 import { addElement } from 'utils/helpersArray';
 
-export function setCheckboxFilters(kind: string, queryParams: string[] | string): void {
+export function setCheckboxFilters(kind: ('category' | 'type'), queryParams: string[] | string): void {
   const checkList: NodeListOf<HTMLInputElement> = document.querySelectorAll(
     `.home__filter-${kind} .filter-checkbox__input`
   );
