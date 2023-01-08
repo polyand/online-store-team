@@ -29,6 +29,6 @@ describe('when called with product id', () => {
 
 describe('when called with invalid id', () => {
   it('should throw an Error', () => {
-    expect(() => getProductData(21)).toThrow(/^Can not find product by ID!$/);
+    expect(() => getProductData(51)).toThrow(/^Can not find product by ID!$/);
   });
 });
