@@ -1,4 +1,4 @@
-import { getHtmlElement } from 'utils/getHtmlElement';
+import { getHtmlElement } from '../../../utils/getHtmlElement';
 
 export function triggerEmptyCart() {
   const empty = getHtmlElement(document, '.cart-wrapper__empty');
