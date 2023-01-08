@@ -76,7 +76,7 @@ export function controlfromRange(
   toRange: HTMLElement,
   sliderColor: string,
   fromValue: HTMLElement,
-  kind: ('price' | 'stock'),
+  kind: 'price' | 'stock',
   unit: string
 ): void {
   const [from, to]: number[] = getParsed(fromRange, toRange);
@@ -99,7 +99,7 @@ export function controltoRange(
   toRange: HTMLElement,
   sliderColor: string,
   toValue: HTMLElement,
-  kind: ('price' | 'stock'),
+  kind: 'price' | 'stock',
   unit: string
 ): void {
   const [from, to]: number[] = getParsed(fromRange, toRange);
@@ -120,7 +120,7 @@ export function controltoRange(
   useRangeFilter(kind, innerValue, 'to');
 }
 
-export function createRangeFilters(kind: ('price' | 'stock')): void {
+export function createRangeFilters(kind: 'price' | 'stock'): void {
   const [unit, value, color] = kind === 'price' ? ['$', price, '#e0eff6'] : ['', stock, '#fff4e7'];
   const fromRange = getInputElement(document, `#from${kind[0].toUpperCase() + kind.slice(1)}`);
   const toRange = getInputElement(document, `#to${kind[0].toUpperCase() + kind.slice(1)}`);
