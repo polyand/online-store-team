@@ -7,7 +7,7 @@ export function sortProducts(): void {
   const sortButton = getHtmlElement(document, '.sort__button');
   const sortList = getHtmlElement(document, '.sort__list');
   const sortItems = getHtmlCollection(document, '.sort__item');
-  const titlesortItem= getHtmlElement(document, '.sort__list li');
+  const titlesortItem = getHtmlElement(document, '.sort__list li');
 
   // Click button. Open/Close select menu
   sortButton.addEventListener('click', () => {
@@ -31,7 +31,7 @@ export function sortProducts(): void {
       });
     }
   });
-  
+
   // Click item. Choose item
   sortItems.forEach((listItem, index) => {
     listItem.addEventListener('click', function (this: HTMLDivElement, event) {
