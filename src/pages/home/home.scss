@@ -6,7 +6,6 @@
   max-width: 1920px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(220px, 300px) 1fr;
   grid-column-gap: 20px;
   padding: 20px;
 
@@ -94,24 +93,57 @@
           }
 
           .filter-checkbox__input {
+            display: none;
+          }
+
+          .filter-checkbox__input + .filter-checkbox__lebel {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            cursor: pointer;
+            &:before {
+              content: '\2714';
+              color: transparent;
+              display: inline-block;
+              border: 1px solid $dark-color;
+              border-radius: 3px;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 15px;
+              margin: -2px 5px 0 0;
+              height: 15px;
+              width: 15px;
+              text-align: center;
+              vertical-align: middle;
+              transition: color ease 0.3s;
+            }
+          }
+
+          .filter-checkbox__input:checked + .filter-checkbox__lebel::before {
+            color: $dark-color;
           }
 
           .filter-checkbox__lebel {
             flex-grow: 1;
-            margin: 0 10px;
+            margin: 0;
           }
 
           .filter-checkbox__quantity {
-            .product-quantity__choose {
-            }
-
+            .product-quantity__choose,
             .product-quantity__total {
+              @extend %Open-Sans-400;
             }
           }
         }
 
         .filter-checkbox__item_filtred {
           color: $semi-dark-color;
+
+          .filter-checkbox__input + .filter-checkbox__lebel {
+            &::before {
+              border-color: $semi-dark-color;
+            }
+          }
         }
       }
     }
@@ -758,7 +790,18 @@
 }
 
 .home_block {
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  @media (max-width: 1920px) {
+    grid-template-columns: calc(226px + 74 * ((100vw - 1275px) / (1920 - 1275))) 1fr;
+  }
+  @media (max-width: 1275px) {
+    grid-template-columns: calc(226px + 74 * ((100vw - 1030px) / (1275 - 1030))) 1fr;
+  }
+  @media (max-width: 1030px) {
+    grid-template-columns: calc(222px + 78 * ((100vw - 785px) / (1030 - 785))) 1fr;
+  }
   @media (max-width: 785px) {
+    grid-template-columns: calc(230px + 70 * ((100vw - 545px) / (785 - 545))) 1fr;
     grid-column-gap: 10px;
   }
   @media (max-width: 545px) {
@@ -768,6 +811,7 @@
 }
 
 .home_list {
+  grid-template-columns: minmax(220px, 300px) 1fr;
   @media (max-width: 1030px) {
     grid-template-columns: 1fr;
   }

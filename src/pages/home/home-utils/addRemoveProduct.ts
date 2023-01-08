@@ -1,21 +1,12 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
+import { getHtmlCollection } from 'utils/getHtmlCollection';
 import { addToCart } from 'utils/addToCart';
 import { dropFromCart } from 'utils/dropFromCart';
 import { headerActions } from 'components/header/header';
 
 export function addRemoveProduct() {
   const buttonsList = getHtmlElement(document, '.home__products-list');
-  const buttons = document.querySelectorAll('.product-footer-info__btn-buy');
-
-  if (!buttons) {
-    throw new Error('Must be an HTMLElement!');
-  }
-  buttons.forEach((button: Element) => {
-    if (!(button instanceof HTMLElement)) {
-      throw new Error('Must be an HTMLElement!');
-    }
-  });
-
+  const buttons = getHtmlCollection(document, '.product-footer-info__btn-buy');
   buttonsList.addEventListener('click', (event) => {
     buttons.forEach((button: Element) => {
       if (event.target === button && button.classList.contains('product-footer-info__btn-buy_add')) {
