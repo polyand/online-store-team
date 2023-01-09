@@ -13,6 +13,7 @@ export function onLoadFunctions(): void {
   headerActions();
   modalActions();
   queriesHome();
+  toggleModal();
 }
 
 function onPopstateFunctions(): void {
