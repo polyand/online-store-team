@@ -6,7 +6,7 @@ const { JSDOM } = jsdom;
 
 const getDomStub = (url: string): void => {
   const dom = new JSDOM('', { url });
-  global.window = dom.window;
+  global.window = dom.window as unknown as Window & typeof globalThis;
 };
 
 describe('When called getGlobalProductId', () => {
