@@ -2,7 +2,7 @@ import { ProductProperties } from 'utils/types';
 import { getHtmlElement } from 'utils/getHtmlElement';
 import data from 'data/data.json';
 
-export function createCheckboxFilter(kind: string) {
+export function createCheckboxFilter(kind: 'type' | 'category') {
   const collection: { [key: string]: number } = {};
 
   // Create collection of properties

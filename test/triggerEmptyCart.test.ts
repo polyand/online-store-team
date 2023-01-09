@@ -6,7 +6,7 @@ const { JSDOM } = jsdom;
 
 const getDomStub = (markup: string): void => {
   const dom = new JSDOM(markup);
-  global.window = dom.window;
+  global.window = dom.window as unknown as Window & typeof globalThis;
   global.document = dom.window.document;
 };
 

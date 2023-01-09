@@ -7,7 +7,7 @@ describe('when passed array and element', () => {
     { array: [true, false, true], element: true, result: true },
   ];
   testCases.forEach((test) => {
-    it('should return true if the array contains an element', () => {
+    it('should return true if the array contains an element / should return false if the array contains no element', () => {
       type T = typeof test.element;
       const result: boolean = containsElement<T>(test.array, test.element);
       const expected: boolean = test.result;

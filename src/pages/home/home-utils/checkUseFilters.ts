@@ -12,7 +12,7 @@ export function checkUseFilters(): boolean {
         return true;
       }
     } else {
-      if (filters[key].length > 0) {
+      if ((key === 'type' || key === 'category' || key === 'text') && filters[key].length > 0) {
         return true;
       }
     }

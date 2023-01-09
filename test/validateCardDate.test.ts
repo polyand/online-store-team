@@ -12,7 +12,7 @@ const getDomStub = (date: string): void => {
     </body>
   </html>
   `);
-  global.window = dom.window;
+  global.window = dom.window as unknown as Window & typeof globalThis;
   global.document = dom.window.document;
 };
 

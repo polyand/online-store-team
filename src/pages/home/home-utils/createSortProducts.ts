@@ -7,6 +7,7 @@ export function sortProducts(): void {
   const sortButton = getHtmlElement(document, '.sort__button');
   const sortList = getHtmlElement(document, '.sort__list');
   const sortItems = getHtmlCollection(document, '.sort__item');
+  const titlesortItem = getHtmlElement(document, '.sort__list li');
 
   // Click button. Open/Close select menu
   sortButton.addEventListener('click', () => {
@@ -24,7 +25,7 @@ export function sortProducts(): void {
 
   // Mousemove items. Remove item`s choose style
   sortList.addEventListener('mousemove', (event) => {
-    if (event.target !== sortList[0]) {
+    if (event.target !== titlesortItem) {
       sortItems.forEach((listItem: Element) => {
         listItem.classList.remove('sort__item_choose');
       });

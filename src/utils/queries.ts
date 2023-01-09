@@ -49,6 +49,9 @@ export const deleteAllQueries = (): void => {
 };
 
 export const getAllQueries = () => {
+  const initValue: {
+    [key: string]: string;
+  } = {};
   const urlParamsString = new URLSearchParams(window.location.search).toString();
   const urlQueryList = urlParamsString.split('&');
   const params = urlQueryList.reduce((accumulator, param) => {
@@ -57,6 +60,6 @@ export const getAllQueries = () => {
       accumulator[key] = decodeURIComponent(val);
     }
     return accumulator;
-  }, {});
+  }, initValue);
   return params;
 };

@@ -4,7 +4,7 @@ import { containsElement, addElement, removeElement } from 'utils/helpersArray';
 import { correctionRangeValue } from './useRangeFilter';
 import { setQueries, deleteQueries } from 'utils/queries';
 
-export function useCheckboxFilter(kind: string): void {
+export function useCheckboxFilter(kind: keyof typeof filters): void {
   const checkListArea = getHtmlElement(document, `.home__filter-${kind}`);
   const checkList: NodeListOf<HTMLInputElement> = document.querySelectorAll(
     `.home__filter-${kind} .filter-checkbox__input`
@@ -20,7 +20,7 @@ export function useCheckboxFilter(kind: string): void {
 
   checkListArea.addEventListener('click', (event) => {
     checkList.forEach((checkbox) => {
-      if (event.target === checkbox) {
+      if (event.target === checkbox && (kind === 'type' || kind === 'category' || kind === 'text')) {
         if (checkbox.checked && !containsElement<string>(filters[kind], checkbox.id)) {
           addElement<string>(filters[kind], checkbox.id);
           setQueries({ name: kind, value: checkbox.id });

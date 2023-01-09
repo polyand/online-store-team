@@ -69,8 +69,10 @@ export function createFiltredCollection(): void {
             }
           });
         } else {
-          if (checkTextFilter(filters[key], product)) {
-            addElement<number>(filtredProductsByKind[key], product.id);
+          if (key === 'text') {
+            if (checkTextFilter(filters[key], product)) {
+              addElement<number>(filtredProductsByKind[key], product.id);
+            }
           }
         }
       }
