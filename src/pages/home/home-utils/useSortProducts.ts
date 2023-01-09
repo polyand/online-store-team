@@ -6,8 +6,9 @@ import { productsFiltredList } from './createProductsList';
 let sort: string | string[];
 
 function sortingProducts(firstProduct: ProductProperties, secondProduct: ProductProperties): number {
-  if (firstProduct[sort[0]] > secondProduct[sort[0]]) return 1;
-  if (firstProduct[sort[0]] < secondProduct[sort[0]]) return -1;
+  const sortedOption = sort[0] as 'price' | 'rating' | 'discount';
+  if (firstProduct[sortedOption] > secondProduct[sortedOption]) return 1;
+  if (firstProduct[sortedOption] < secondProduct[sortedOption]) return -1;
   return 0;
 }
 
