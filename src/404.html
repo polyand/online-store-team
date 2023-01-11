@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <base href="https://online-store-team.netlify.app/" target="_blank" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INWOOD - Error 404</title>
+    <style>
+      @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        src: local(''), url('./assets/fonts/open-sans-v34-latin-regular.woff2') format('woff2'),
+          url('./assets/fonts/open-sans-v34-latin-regular.woff') format('woff');
+      }
+      @font-face {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 700;
+        src: local(''), url('./assets/fonts/open-sans-v34-latin-700.woff2') format('woff2'),
+          url('./assets/fonts/open-sans-v34-latin-700.woff') format('woff');
+      }
+      body {
+        background-color: #c4c4c4;
+        color: #07484a;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 700;
+        overflow: hidden;
+      }
+      .wrapper {
+        width: 70%;
+        height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+      }
+      .image-404 {
+        width: 40%;
+      }
+      .description-404 {
+        min-width: 300px;
+      }
+      .description-404__error-number {
+        font-size: 5rem;
+      }
+      .description-404__header {
+        margin: 3% 0;
+        font-size: 2rem;
+        line-height: 100%;
+      }
+      .description-404__text {
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin: 0 0 5% 0;
+        line-height: 100%;
+      }
+      .description-404__button {
+        width: 30%;
+        height: 2.5rem;
+        background-color: #70908b;
+        box-shadow: 0px 4px 5px 2px rgba(143, 201, 192, 0.3);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+      }
+      .description-404__button::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        background: #07484a;
+        z-index: 1;
+        transition: 0.2s ease;
+        border-radius: 5px;
+      }
+      .description-404__button:hover::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #07484a;
+        z-index: 1;
+        transition: 0.2s ease;
+      }
+      .description-404__link {
+        position: relative;
+        z-index: 2;
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 2.5rem;
+        text-decoration: none;
+        color: #fdfbf8;
+        font-weight: 400;
+        font-size: 1.2rem;
+      }
+      @media (max-width: 750px) {
+        .wrapper {
+          flex-direction: column;
+          gap: 0;
+        }
+        .image-404 {
+          width: 100%;
+        }
+        .description-404__error-number {
+          text-align: center;
+        }
+        .description-404__button {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img src="assets/img/error_404.svg" alt="Error 404 image" class="image-404" />
+      <div class="description-404">
+        <div class="description-404__error-number">404</div>
+        <div class="description-404__header">This is not the page you looking for...</div>
+        <div class="description-404__text">Seems you're lost, click button below to go home</div>
+        <button class="description-404__button">
+          <a href="/" class="description-404__link">Home</a>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
