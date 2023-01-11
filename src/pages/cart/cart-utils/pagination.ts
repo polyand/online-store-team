@@ -1,12 +1,23 @@
 import { getHtmlElement } from 'utils/getHtmlElement';
 import { inCart } from 'utils/saveCart';
 import { PaginationData } from 'utils/types';
+import { getQuery, setQueries } from 'utils/queries';
 import { createProductItem } from './create-product-item';
 
-export const paginationData: PaginationData = {
-  currentPage: 1,
-  productsPerPage: 3,
-};
+function getPaginationDataFromUrl(): PaginationData {
+  const curPageUrl = getQuery('page');
+  const prodPerPageUrl = getQuery('products');
+  const currentPage = curPageUrl ? parseInt(curPageUrl) : 1;
+  const productsPerPage = prodPerPageUrl ? parseInt(prodPerPageUrl) : 3;
+  return { currentPage, productsPerPage };
+}
+
+function setPaginationDataToUrl(paginationData: PaginationData): void {
+  setQueries({ name: 'page', value: `${paginationData.currentPage}` });
+  setQueries({ name: 'products', value: `${paginationData.productsPerPage}` });
+}
+
+export const paginationData: PaginationData = getPaginationDataFromUrl();
 
 function stayFocused(input: HTMLInputElement) {
   input.onblur = () => {
@@ -38,6 +49,7 @@ function getProductPerPageValue() {
   if (inputProductsPerPage instanceof HTMLInputElement) {
     if (validatePaginationInput(inputProductsPerPage.value)) {
       paginationData.productsPerPage = +inputProductsPerPage.value;
+      setPaginationDataToUrl(paginationData);
     } else {
       stayFocused(inputProductsPerPage);
     }
@@ -61,6 +73,7 @@ function nextPaginatedPage() {
     }
     prevPageBtn.disabled = false;
   }
+  setPaginationDataToUrl(paginationData);
 }
 
 function prevPaginatedPage() {
@@ -78,6 +91,7 @@ function prevPaginatedPage() {
     }
     nextPageBtn.disabled = false;
   }
+  setPaginationDataToUrl(paginationData);
 }
 
 function setPaginationProperties() {
@@ -99,6 +113,7 @@ function setPaginationProperties() {
   if (paginationData.currentPage === 1 && prevPageBtn instanceof HTMLButtonElement) {
     prevPageBtn.disabled = true;
   }
+  setPaginationDataToUrl(paginationData);
 }
 
 export function pagination(productsList: HTMLLIElement[], paginationProps: PaginationData): HTMLLIElement[] {
