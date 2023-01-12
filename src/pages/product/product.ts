@@ -10,16 +10,17 @@ import { getBuyNow } from './product-utils/get-buy-now';
 import ProductHTML from './product.html';
 import './product.scss';
 
-export const product = () => {
-  return createHtmlElement(ProductHTML);
-};
-
-export const productActions = () => {
-  loadProductsFromCart();
-  fillProductPage(getGlobalProductId());
-  changeImage();
-  displayCartButton();
-  addProductToCart();
-  dropProductFromCart();
-  getBuyNow();
-};
+export class ProductPage {
+  product() {
+    return createHtmlElement(ProductHTML);
+  }
+  productActions() {
+    loadProductsFromCart();
+    fillProductPage(getGlobalProductId());
+    changeImage();
+    displayCartButton();
+    addProductToCart();
+    dropProductFromCart();
+    getBuyNow();
+  }
+}

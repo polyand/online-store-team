@@ -13,23 +13,24 @@ import { loadProductsFromCart } from 'utils/saveCart';
 import HomeHTML from './home.html';
 import './home.scss';
 
-export const home = () => {
-  return createHtmlElement(HomeHTML);
-};
-
-export function homeActions(): void {
-  createCheckboxFilter('category');
-  createCheckboxFilter('type');
-  createRangeFilters('price');
-  createRangeFilters('stock');
-  sortProducts();
-  searchProducts();
-  changeViewProducts();
-  createProductsList();
-  useTextFilter();
-  useCheckboxFilter('category');
-  useCheckboxFilter('type');
-  loadProductsFromCart();
-  resetFilters();
-  copyLink();
+export class HomePage {
+  home() {
+    return createHtmlElement(HomeHTML);
+  }
+  homeActions() {
+    createCheckboxFilter('category');
+    createCheckboxFilter('type');
+    createRangeFilters('price');
+    createRangeFilters('stock');
+    sortProducts();
+    searchProducts();
+    changeViewProducts();
+    createProductsList();
+    useTextFilter();
+    useCheckboxFilter('category');
+    useCheckboxFilter('type');
+    loadProductsFromCart();
+    resetFilters();
+    copyLink();
+  }
 }
