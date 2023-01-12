@@ -10,18 +10,19 @@ import { promoCodes, stylePromo } from './cart-utils/promo-codes';
 import { addDelPromocode } from './cart-utils/add-del-promocode';
 import { setModalQuery } from './cart-utils/set-modal-query';
 
-export const cart = () => {
-  return createHtmlElement(cartHTML);
-};
-
-export function cartActions() {
-  loadProductsFromCart();
-  changeSummaryCost(inCart, promoCodes);
-  changeSummaryAmount(inCart);
-  createProductItem(inCart);
-  const input = getHtmlElement(document, '.summary__promo-input');
-  input.addEventListener('input', stylePromo);
-  addDelPromocode();
-  const modalButton = getHtmlElement(document, '.summary__submit');
-  modalButton.addEventListener('click', setModalQuery);
+export class CartPage {
+  cart() {
+    return createHtmlElement(cartHTML);
+  }
+  cartActions() {
+    loadProductsFromCart();
+    changeSummaryCost(inCart, promoCodes);
+    changeSummaryAmount(inCart);
+    createProductItem(inCart);
+    const input = getHtmlElement(document, '.summary__promo-input');
+    input.addEventListener('input', stylePromo);
+    addDelPromocode();
+    const modalButton = getHtmlElement(document, '.summary__submit');
+    modalButton.addEventListener('click', setModalQuery);
+  }
 }
