@@ -1,26 +1,27 @@
-import { home } from '../pages/home';
-import { cart } from '../pages/cart';
-import { homeActions } from '../pages/home/home';
-import { cartActions } from '../pages/cart/cart';
+import { HomePage } from '../pages/home/home';
+import { CartPage } from '../pages/cart/cart';
 import { RoutesData } from './types';
-import { product } from 'pages/product';
-import { productActions } from 'pages/product/product';
+import { ProductPage } from 'pages/product/product';
 import { getGlobalProductId } from './getGlobalProductId';
+
+const cartPage = new CartPage();
+const homePage = new HomePage();
+const productPage = new ProductPage();
 
 const routes = [
   {
-    data: home(),
-    actions: homeActions,
+    data: homePage.home(),
+    actions: homePage.homeActions,
     path: '/',
   },
   {
-    data: cart(),
-    actions: cartActions,
+    data: cartPage.cart(),
+    actions: cartPage.cartActions,
     path: '/cart',
   },
   {
-    data: product(),
-    actions: productActions,
+    data: productPage.product(),
+    actions: productPage.productActions,
     path: `/products/${getGlobalProductId()}`,
   },
 ];
