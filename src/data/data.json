@@ -1,0 +1,546 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "KONGSBERG",
+      "description": "Fabric upholstery and wood. Accommodates spring and springless mattresses of size 140x200 cm. Without slatted base and mattress. 156x218 cm, height 101 cm",
+      "price": 250,
+      "discount": 15,
+      "rating": 4.5,
+      "stock": 94,
+      "type": "Bed",
+      "category": "Bedroom",
+      "thumbnail": "data/assets/bedroom/beds/kongsberg/thumbnail.jpg",
+      "images": [
+        "data/assets/bedroom/beds/kongsberg/1.jpg",
+        "data/assets/bedroom/beds/kongsberg/2.jpg",
+        "data/assets/bedroom/beds/kongsberg/3.jpg",
+        "data/assets/bedroom/beds/kongsberg/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ABILDRO",
+      "description": "Metal. Accommodates box mattress, spring and springless mattresses size 140x200 cm. Without base and mattress. 147x217 cm, height 100 cm",
+      "price": 149,
+      "discount": 10,
+      "rating": 3.9,
+      "stock": 34,
+      "type": "Bed",
+      "category": "Bedroom",
+      "thumbnail": "data/assets/bedroom/beds/abildro/thumbnail.jpg",
+      "images": [
+        "data/assets/bedroom/beds/abildro/1.jpg",
+        "data/assets/bedroom/beds/abildro/2.jpg",
+        "data/assets/bedroom/beds/abildro/3.jpg",
+        "data/assets/bedroom/beds/abildro/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "SALLINGE",
+      "description": "Spruce massif. Accommodates box mattress, spring and springless mattresses size 140x200 cm. Without base and mattress. 148x208 cm, height 50 cm",
+      "price": 110,
+      "discount": 20,
+      "rating": 4.1,
+      "stock": 56,
+      "type": "Bed",
+      "category": "Bedroom",
+      "thumbnail": "data/assets/bedroom/beds/sallinge/thumbnail.jpg",
+      "images": [
+        "data/assets/bedroom/beds/sallinge/1.jpg",
+        "data/assets/bedroom/beds/sallinge/2.jpg",
+        "data/assets/bedroom/beds/sallinge/3.jpg",
+        "data/assets/bedroom/beds/sallinge/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "TAPDRUP",
+      "description": "Deco veneer. 3 drawer chest oak. W71 x H69 x D35 cm",
+      "price": 50,
+      "discount": 7,
+      "rating": 4.2,
+      "stock": 123,
+      "type": "Chest of Drawer",
+      "category": "Bedroom",
+      "thumbnail": "data/assets/bedroom/chest of drawers/tapdrup/thumbnail.jpg",
+      "images": [
+        "data/assets/bedroom/chest of drawers/tapdrup/1.jpg",
+        "data/assets/bedroom/chest of drawers/tapdrup/2.jpg",
+        "data/assets/bedroom/chest of drawers/tapdrup/3.jpg",
+        "data/assets/bedroom/chest of drawers/tapdrup/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "BJERRINGBRO",
+      "description": "6 drawer chest. Natural/white. Solid wood and MDF. W83 x H80 x D38 cm",
+      "price": 99,
+      "discount": 12,
+      "rating": 3.1,
+      "stock": 32,
+      "type": "Chest of Drawer",
+      "category": "Bedroom",
+      "thumbnail": "data/assets/bedroom/chest of drawers/bjerringbro/thumbnail.jpg",
+      "images": [
+        "data/assets/bedroom/chest of drawers/bjerringbro/1.jpg",
+        "data/assets/bedroom/chest of drawers/bjerringbro/2.jpg",
+        "data/assets/bedroom/chest of drawers/bjerringbro/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "GEDVED",
+      "description": "3-seater sofa in fabric, grey. Seat cushion with pocket springs and foam padding. Back cushion in foam. Legs in solid wood. W210 x H85 x D84 cm",
+      "price": 490,
+      "discount": 20,
+      "rating": 4.7,
+      "stock": 83,
+      "type": "Sofa",
+      "category": "Living Room",
+      "thumbnail": "data/assets/living room/sofas/gedved/thumbnail.jpg",
+      "images": [
+        "data/assets/living room/sofas/gedved/1.jpg",
+        "data/assets/living room/sofas/gedved/2.jpg",
+        "data/assets/living room/sofas/gedved/3.jpg",
+        "data/assets/living room/sofas/gedved/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "EGEDAL",
+      "description": "2.5-seater sofa in fabric, grey. Seat and back cushions in foam. Legs in solid wood. W170 x H82 x D81 cm",
+      "price": 249,
+      "discount": 21,
+      "rating": 4.1,
+      "stock": 50,
+      "type": "Sofa",
+      "category": "Living Room",
+      "thumbnail": "data/assets/living room/sofas/egedal/thumbnail.jpg",
+      "images": [
+        "data/assets/living room/sofas/egedal/1.jpg",
+        "data/assets/living room/sofas/egedal/2.jpg",
+        "data/assets/living room/sofas/egedal/3.jpg",
+        "data/assets/living room/sofas/egedal/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "KONGSMARK",
+      "description": "2.5-seater sofa in fabric, dark grey. Seat and back cushions in foam. Legs in solid wood. W209 x H80 x D91 cm",
+      "price": 525,
+      "discount": 22,
+      "rating": 4.3,
+      "stock": 68,
+      "type": "Sofa",
+      "category": "Living Room",
+      "thumbnail": "data/assets/living room/sofas/kongsmark/thumbnail.jpg",
+      "images": [
+        "data/assets/living room/sofas/kongsmark/1.jpg",
+        "data/assets/living room/sofas/kongsmark/2.jpg",
+        "data/assets/living room/sofas/kongsmark/3.jpg",
+        "data/assets/living room/sofas/kongsmark/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "INBOOK",
+      "description": "Bamboo. D60 x H45 cm.",
+      "price": 55,
+      "discount": 10,
+      "rating": 4.7,
+      "stock": 96,
+      "type": "Table",
+      "category": "Living Room",
+      "thumbnail": "data/assets/living room/tables/vandsted/thumbnail.jpg",
+      "images": [
+        "data/assets/living room/tables/vandsted/1.jpg",
+        "data/assets/living room/tables/vandsted/2.jpg",
+        "data/assets/living room/tables/vandsted/3.jpg",
+        "data/assets/living room/tables/vandsted/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "FALSLED",
+      "description": "Nest of tables. Oak veneer and tempered glass. D50/40 x H45/40 cm",
+      "price": 79,
+      "discount": 6,
+      "rating": 5,
+      "stock": 89,
+      "type": "Table",
+      "category": "Living Room",
+      "thumbnail": "data/assets/living room/tables/falsed/thumbnail.jpg",
+      "images": [
+        "data/assets/living room/tables/falsed/1.jpg",
+        "data/assets/living room/tables/falsed/2.jpg",
+        "data/assets/living room/tables/falsed/3.jpg",
+        "data/assets/living room/tables/falsed/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "SKIBET",
+      "description": "Dining table. Solid oak and light oak veneer. D120 x H75 cm.",
+      "price": 350,
+      "discount": 11,
+      "rating": 4.2,
+      "stock": 65,
+      "type": "Table",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/tables/skibet/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/tables/skibet/1.jpg",
+        "data/assets/dining room/tables/skibet/2.jpg",
+        "data/assets/dining room/tables/skibet/3.jpg",
+        "data/assets/dining room/tables/skibet/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "EGENS",
+      "description": "Dining table. Solid oak and black oak veneer 90x190/270",
+      "price": 325,
+      "discount": 26,
+      "rating": 4.6,
+      "stock": 52,
+      "type": "Table",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/tables/egens/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/tables/egens/1.jpg",
+        "data/assets/dining room/tables/egens/2.jpg",
+        "data/assets/dining room/tables/egens/3.jpg",
+        "data/assets/dining room/tables/egens/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "HVIDOVRE",
+      "description": "Dining chair. Fabric, oak veneer and steel.",
+      "price": 85,
+      "discount": 5,
+      "rating": 5.0,
+      "stock": 68,
+      "type": "Chair",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/chairs/hvidove/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/chairs/hvidove/1.jpg",
+        "data/assets/dining room/chairs/hvidove/2.jpg",
+        "data/assets/dining room/chairs/hvidove/3.jpg",
+        "data/assets/dining room/chairs/hvidove/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "JELS",
+      "description": "Dining chair. Pine massif, oak. 42x50 cm, height 86 cm",
+      "price": 80,
+      "discount": 20,
+      "rating": 4.3,
+      "stock": 114,
+      "type": "Chair",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/chairs/jels/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/chairs/jels/1.jpg",
+        "data/assets/dining room/chairs/jels/2.jpg",
+        "data/assets/dining room/chairs/jels/3.jpg",
+        "data/assets/dining room/chairs/jels/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "TJELE",
+      "description": "Office chair. Faux leather. With adjustable height and stepless tilt mechanism. W68 x H115-125 x D77 cm.",
+      "price": 115,
+      "discount": 13,
+      "rating": 4.0,
+      "stock": 105,
+      "type": "Chair",
+      "category": "Office",
+      "thumbnail": "data/assets/office/chairs/tjele/thumbnail.jpg",
+      "images": [
+        "data/assets/office/chairs/tjele/1.jpg",
+        "data/assets/office/chairs/tjele/2.jpg",
+        "data/assets/office/chairs/tjele/3.jpg",
+        "data/assets/office/chairs/tjele/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "ASPERUP",
+      "description": "Office chair. Fabric and mesh. Base in steel. With lumbar support, flip-up armrests, adjustable height and stepless tilt mechanism. W59 x H95-106 x D61 cm.",
+      "price": 85,
+      "discount": 23,
+      "rating": 3.0,
+      "stock": 85,
+      "type": "Chair",
+      "category": "Office",
+      "thumbnail": "data/assets/office/chairs/asperup/thumbnail.jpg",
+      "images": [
+        "data/assets/office/chairs/asperup/1.jpg",
+        "data/assets/office/chairs/asperup/2.jpg",
+        "data/assets/office/chairs/asperup/3.jpg",
+        "data/assets/office/chairs/asperup/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 17,
+      "title": " TRAPPEDAL",
+      "description": "Shelving unit. Deco veneer and metal. 5 shelves. W70 x H109 x D30 cm.",
+      "price": 70,
+      "discount": 22,
+      "rating": 4.1,
+      "stock": 78,
+      "type": "Bkcase/Room divider",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/divider/trappedal/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/divider/trappedal/1.jpg",
+        "data/assets/storage/divider/trappedal/2.jpg",
+        "data/assets/storage/divider/trappedal/3.jpg",
+        "data/assets/storage/divider/trappedal/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "MARKSKEL",
+      "description": "Bookcase. Deco veneer and MDF. Drawers with full extension slides. W90 x H153 x D36 cm.",
+      "price": 165,
+      "discount": 30,
+      "rating": 4.5,
+      "stock": 88,
+      "type": "Bkcase/Room divider",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/divider/markskel/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/divider/markskel/1.jpg",
+        "data/assets/storage/divider/markskel/2.jpg",
+        "data/assets/storage/divider/markskel/3.jpg",
+        "data/assets/storage/divider/markskel/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "JENSLEV",
+      "description": "Deco veneer. 3 doors + 3 drawers. Wardrobe interior: 4 shelves and 2 hanging rails. W145 x H176 x D50 cm.",
+      "price": 230,
+      "discount": 15,
+      "rating": 4.1,
+      "stock": 54,
+      "type": "Wardrobe",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/wardrobe/jenslev/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/wardrobe/jenslev/1.jpg",
+        "data/assets/storage/wardrobe/jenslev/2.jpg",
+        "data/assets/storage/wardrobe/jenslev/3.jpg",
+        "data/assets/storage/wardrobe/jenslev/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "FREDENSBORG",
+      "description": "Deco veneer. 4 doors + 2 drawers. Wardrobe interior: 8 shelves and 1 hanging rail. W183 x H200 x D64 cm.",
+      "price": 425,
+      "discount": 20,
+      "rating": 4.4,
+      "stock": 40,
+      "type": "Wardrobe",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/wardrobe/fredensborg/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/wardrobe/fredensborg/1.jpg",
+        "data/assets/storage/wardrobe/fredensborg/2.jpg",
+        "data/assets/storage/wardrobe/fredensborg/3.jpg",
+        "data/assets/storage/wardrobe/fredensborg/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "BROBY",
+      "description": "Bamboo and MDF. W70 x H150 x D37 cm.",
+      "price": 65,
+      "discount": 13,
+      "rating": 3.4,
+      "stock": 93,
+      "type": "Shelving",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/shelving/broby/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/shelving/broby/1.jpg",
+        "data/assets/storage/shelving/broby/2.jpg",
+        "data/assets/storage/shelving/broby/3.jpg",
+        "data/assets/storage/shelving/broby/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "HORSENS",
+      "description": "Shelves oak. W70 x H197 x D29 cm.",
+      "price": 68,
+      "discount": 7,
+      "rating": 2.5,
+      "stock": 62,
+      "type": "Shelving",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/shelving/horsens/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/shelving/horsens/1.jpg",
+        "data/assets/storage/shelving/horsens/2.jpg",
+        "data/assets/storage/shelving/horsens/3.jpg",
+        "data/assets/storage/shelving/horsens/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "SKALS",
+      "description": "Deco veneer and tempered glass. W71 x H71/81 x D35 cm.",
+      "price": 80,
+      "discount": 9,
+      "rating": 2.9,
+      "stock": 32,
+      "type": "Cabinet",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/cabinet/skals/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/cabinet/skals/1.jpg",
+        "data/assets/storage/cabinet/skals/2.jpg",
+        "data/assets/storage/cabinet/skals/3.jpg",
+        "data/assets/storage/cabinet/skals/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "HALDAGER",
+      "description": "Deco veneer and tempered glass. W71 x H71/81 x D35 cm.",
+      "price": 87,
+      "discount": 15,
+      "rating": 3.7,
+      "stock": 11,
+      "type": "Cabinet",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/cabinet/haldager/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/cabinet/haldager/1.jpg",
+        "data/assets/storage/cabinet/haldager/2.jpg",
+        "data/assets/storage/cabinet/haldager/3.jpg",
+        "data/assets/storage/cabinet/haldager/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 25,
+      "title": "REFLECT",
+      "description": "Deco veneer. W71 x H71/81 x D35 cm.",
+      "price": 105,
+      "discount": 10,
+      "rating": 2.1,
+      "stock": 29,
+      "type": "Cabinet",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/cabinet/reflect/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/cabinet/reflect/1.jpg",
+        "data/assets/storage/cabinet/reflect/2.jpg",
+        "data/assets/storage/cabinet/reflect/3.jpg",
+        "data/assets/storage/cabinet/reflect/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "JANNERUP",
+      "description": "Deco veneer. 8 shelves. W120 x H151 x D35 cm.",
+      "price": 105,
+      "discount": 10,
+      "rating": 2.1,
+      "stock": 29,
+      "type": "Shelving",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/shelving/jannerup/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/shelving/jannerup/1.jpg",
+        "data/assets/storage/shelving/jannerup/2.jpg",
+        "data/assets/storage/shelving/jannerup/3.jpg",
+        "data/assets/storage/shelving/jannerup/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 27,
+      "title": "VANDBORG",
+      "description": "Deco veneer and metal. With 4 shelves + 2 sliding doors. W80 x H163 x D40 cm.",
+      "price": 145,
+      "discount": 12,
+      "rating": 4.1,
+      "stock": 93,
+      "type": "Shelving",
+      "category": "Storage",
+      "thumbnail": "data/assets/storage/shelving/vandborg/thumbnail.jpg",
+      "images": [
+        "data/assets/storage/shelving/vandborg/1.jpg",
+        "data/assets/storage/shelving/vandborg/2.jpg",
+        "data/assets/storage/shelving/vandborg/3.jpg",
+        "data/assets/storage/shelving/vandborg/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 28,
+      "title": "AABENRAA",
+      "description": "Deco veneer and steel. W90 x L160 x H75 cm.",
+      "price": 320,
+      "discount": 10,
+      "rating": 3.8,
+      "stock": 43,
+      "type": "Table",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/tables/aabenraa/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/tables/aabenraa/1.jpg",
+        "data/assets/dining room/tables/aabenraa/2.jpg",
+        "data/assets/dining room/tables/aabenraa/3.jpg",
+        "data/assets/dining room/tables/aabenraa/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "GADESKOV",
+      "description": "Solid oak and oak veneer. W90 x L200 x H75 cm.",
+      "price": 210,
+      "discount": 5,
+      "rating": 3.5,
+      "stock": 67,
+      "type": "Table",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/tables/gadeskov/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/tables/gadeskov/1.jpg",
+        "data/assets/dining room/tables/gadeskov/2.jpg",
+        "data/assets/dining room/tables/gadeskov/3.jpg",
+        "data/assets/dining room/tables/gadeskov/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 30,
+      "title": "PURHUS",
+      "description": "Dining chair. Fabric and steel.",
+      "price": 82,
+      "discount": 20,
+      "rating": 4.0,
+      "stock": 25,
+      "type": "Chair",
+      "category": "Dining Room",
+      "thumbnail": "data/assets/dining room/chairs/purhus/thumbnail.jpg",
+      "images": [
+        "data/assets/dining room/chairs/purhus/1.jpg",
+        "data/assets/dining room/chairs/purhus/2.jpg",
+        "data/assets/dining room/chairs/purhus/3.jpg",
+        "data/assets/dining room/chairs/purhus/thumbnail.jpg"
+      ]
+    }
+  ],
+  "total": 30,
+  "skip": 0,
+  "limit": 30
+}

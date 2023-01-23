@@ -1,0 +1,23 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  #root {
+    flex-grow: 1;
+  }
+
+  #modal {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $modal-back-color;
+  }
+
+  .modal-hide {
+    display: none;
+  }
+}

@@ -1,0 +1,68 @@
+<div class="home home_block">
+  <aside class="home__filters">
+    <div class="home__buttons">
+      <button class="home__btn-reset">Reset Filters</button>
+      <button class="home__btn-link">Copy Link</button>
+    </div>
+    <div class="home__filter-category filter-checkbox">
+      <p class="filter-checkbox__title">Category</p>
+      <div class="filter-checkbox__item-list"></div>
+    </div>
+
+    <div class="home__filter-type filter-checkbox">
+      <p class="filter-checkbox__title">Type</p>
+      <div class="filter-checkbox__item-list"></div>
+    </div>
+
+    <div class="home__filter-price filter-range">
+      <p class="filter-range__title">Price</p>
+      <div class="filter-range__value">
+        <div class="filter-range__from-value"></div>
+        <div class="filter-range__not-found invisible">Not found</div>
+        <div class="filter-range__to-value"></div>
+      </div>
+      <div class="filter-range__multivalue">
+        <input id="fromPrice" type="range" min="" max="" />
+        <input id="toPrice" type="range" min="" max="" />
+      </div>
+    </div>
+
+    <div class="home__filter-stock filter-range">
+      <p class="filter-range__title">Stock</p>
+      <div class="filter-range__value">
+        <div class="filter-range__from-value"></div>
+        <div class="filter-range__not-found invisible">Not found</div>
+        <div class="filter-range__to-value"></div>
+      </div>
+      <div class="filter-range__multivalue">
+        <input id="fromStock" type="range" min="" max="" />
+        <input id="toStock" type="range" min="" max="" />
+      </div>
+    </div>
+  </aside>
+  <article class="home__content">
+    <div class="home__option-bar">
+      <div class="home__sort sort">
+        <button class="sort__button">Sort options:</button>
+        <ul class="sort__list sort__list_invisible">
+          <li data-value="sort-options" class="sort__item">Sort options:</li>
+          <li data-value="price-ASC" class="sort__item">Sort by price ASC</li>
+          <li data-value="price-DESC" class="sort__item">Sort by price DESC</li>
+          <li data-value="rating-ASC" class="sort__item">Sort by rating ASC</li>
+          <li data-value="rating-DESC" class="sort__item">Sort by rating DESC</li>
+          <li data-value="discount-ASC" class="sort__item">Sort by discount ASC</li>
+          <li data-value="discount-DESC" class="sort__item">Sort by discount DESC</li>
+        </ul>
+      </div>
+      <div class="home_search-stat">Found: 20</div>
+      <div class="home__search search">
+        <input type="text" placeholder="Search product" class="search__input" id="search" />
+        <button class="search__button" tabindex="-1"></button>
+      </div>
+      <div class="home__view-wrapper">
+        <button class="home__view-button home__view-button_block"></button>
+      </div>
+    </div>
+    <div class="home__products-list home__products-list_block"></div>
+  </article>
+</div>

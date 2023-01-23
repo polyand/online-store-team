@@ -1,0 +1,46 @@
+<div class="cart-wrapper">
+  <div class="cart-wrapper__empty empty cart-hide">
+    <img src="../../assets/img/empty-cart.png" alt="Empty cart image" class="empty__image" />
+    <div class="empty__desc">Your cart is empty. Lets go shopping</div>
+  </div>
+  <div class="cart-wrapper__fill">
+    <div class="cart-wrapper__products products">
+      <div class="products__header">
+        <span class="products__header-title"> Products in Cart </span>
+        <label for="paginate" class="products__header-label" data-title="Only integers from 1 to 99 are allowed"
+          >products per page
+        </label>
+        <input id="paginate" type="text" class="products__header-input" value="3" />
+        <span class="products__header-text">page: </span>
+        <button class="products__header-prev">-</button>
+        <span class="products__header-current-page">1</span>
+        <button class="products__header-next">+</button>
+      </div>
+      <ul class="products__list"></ul>
+    </div>
+    <div class="cart-wrapper__summary summary">
+      <div class="summary__header">Summary</div>
+      <div class="summary__products">Products: <span class="summary__products-amount"></span></div>
+      <div class="summary__price">Total cost: <span>$</span><span class="summary__products-cost"></span></div>
+      <div class="summary__price-promo cart-hide">
+        New cost: <span>$</span><span class="summary__products-cost-promo"></span>
+      </div>
+      <div class="summary__promo">
+        <label class="summary__promo-label" for="promo">Have a promocode? Enter it below</label>
+        <input type="text" class="summary__promo-input" id="promo" placeholder="your promo..." />
+        <button class="summary__promo-apply" disabled>Add</button>
+        <div class="summary__promo-test">Test promo: RSSchool, 2022Q3</div>
+        <div class="summary__promo-applied applied cart-hide">
+          <!-- <div class="applied-header">Applied codes</div>
+          <div class="applied-code">
+            <span class="applied-name">RSSchool</span>
+            <span class="applied-disc">10</span>
+            % -
+            <button class="applied-drop">Drop</button>
+          </div> -->
+        </div>
+      </div>
+      <button class="summary__submit"><span>BUY NOW</span></button>
+    </div>
+  </div>
+</div>
